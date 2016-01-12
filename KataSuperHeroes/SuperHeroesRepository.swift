@@ -107,7 +107,7 @@ class SuperHeroesRepository {
         completion(superHeroes)
     }
 
-    func superHeroesByName(name: String, completion: (SuperHero?) -> ()) {
+    func getSuperHeroeByName(name: String, completion: (SuperHero?) -> ()) {
         let superHeroByName = superHeroes.filter { $0.name == name }.first
         completion(superHeroByName)
     }

@@ -21,6 +21,7 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
         tableView.delegate = delegate
         tableView.tableFooterView = UIView()
         tableView.accessibilityLabel = "SuperHeroesTableView"
+        configureNavigationBarBackButton()
         super.viewDidLoad()
     }
 
@@ -30,5 +31,9 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
 
     func openSuperHeroDetailScreen(superHeroDetailViewController: UIViewController) {
         navigationController?.push(superHeroDetailViewController)
+    }
+
+    private func configureNavigationBarBackButton() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
     }
 }

@@ -17,6 +17,7 @@
 		EBC2308A1C45016A007D5068 /* KataSuperHeroesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC230891C45016A007D5068 /* KataSuperHeroesTests.swift */; };
 		EBDB2D091C4560D0001FC84B /* SuperHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDB2D081C4560D0001FC84B /* SuperHeroDetailViewController.swift */; };
 		EBDB2D0B1C456129001FC84B /* SuperHeroDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDB2D0A1C456129001FC84B /* SuperHeroDetailPresenter.swift */; };
+		EBDB2D0D1C456410001FC84B /* GetSuperHeroByName.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDB2D0C1C456410001FC84B /* GetSuperHeroByName.swift */; };
 		EBDE9B791C4518EE00E4B4C2 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE9B781C4518EE00E4B4C2 /* ServiceLocator.swift */; };
 		EBDE9B7C1C4519A400E4B4C2 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE9B7B1C4519A400E4B4C2 /* UIColor.swift */; };
 		EBDE9B821C451CBB00E4B4C2 /* GetSuperHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE9B811C451CBB00E4B4C2 /* GetSuperHeroes.swift */; };
@@ -56,6 +57,7 @@
 		EBC2308B1C45016A007D5068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBDB2D081C4560D0001FC84B /* SuperHeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailViewController.swift; sourceTree = "<group>"; };
 		EBDB2D0A1C456129001FC84B /* SuperHeroDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailPresenter.swift; sourceTree = "<group>"; };
+		EBDB2D0C1C456410001FC84B /* GetSuperHeroByName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSuperHeroByName.swift; sourceTree = "<group>"; };
 		EBDE9B781C4518EE00E4B4C2 /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		EBDE9B7B1C4519A400E4B4C2 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		EBDE9B811C451CBB00E4B4C2 /* GetSuperHeroes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetSuperHeroes.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				EBDE9B811C451CBB00E4B4C2 /* GetSuperHeroes.swift */,
+				EBDB2D0C1C456410001FC84B /* GetSuperHeroByName.swift */,
 			);
 			name = UseCase;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				EBDB2D091C4560D0001FC84B /* SuperHeroDetailViewController.swift in Sources */,
 				EBDE9B7C1C4519A400E4B4C2 /* UIColor.swift in Sources */,
 				EBC230751C45016A007D5068 /* AppDelegate.swift in Sources */,
+				EBDB2D0D1C456410001FC84B /* GetSuperHeroByName.swift in Sources */,
 				EBDE9B821C451CBB00E4B4C2 /* GetSuperHeroes.swift in Sources */,
 				EBDE9B791C4518EE00E4B4C2 /* ServiceLocator.swift in Sources */,
 				EBDE9B891C453AEA00E4B4C2 /* SuperHero.swift in Sources */,

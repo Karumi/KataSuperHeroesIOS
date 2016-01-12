@@ -25,7 +25,8 @@ class ServiceLocator {
     }
 
     private func provideSuperHeroDetailPresenter(ui: SuperHeroDetailUI, superHeroName: String) -> SuperHeroDetailPresenter {
-        return SuperHeroDetailPresenter(ui: ui, superHeroName: superHeroName)
+        let getSuperHeroByName = GetSuperHeroByName(repository: SuperHeroesRepository())
+        return SuperHeroDetailPresenter(ui: ui, superHeroName: superHeroName, getSuperHeroByName: getSuperHeroByName)
     }
 
     private func provideSuperHeroesViewController() -> UIViewController {
