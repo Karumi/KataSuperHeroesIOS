@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SuperHeroesViewController.swift
 //  KataSuperHeroes
 //
 //  Created by Pedro Vicente Gomez on 12/01/16.
@@ -7,8 +7,25 @@
 //
 
 import UIKit
+import BothamUI
 
-class SuperHeroesViewController: KataSuperHeroesViewController, SuperHeroesUI {
+class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewController, SuperHeroesUI {
 
+    @IBOutlet weak var tableView: UITableView!
+
+    var dataSource: BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell>!
+    var delegate: UITableViewDelegate!
+
+    override func viewDidLoad() {
+        tableView.dataSource = dataSource
+        tableView.delegate = delegate
+        tableView.tableFooterView = UIView()
+        tableView.accessibilityLabel = "SuperHeroesTableView"
+        super.viewDidLoad()
+    }
+
+    func showEmptyCase() {
+
+    }
 
 }

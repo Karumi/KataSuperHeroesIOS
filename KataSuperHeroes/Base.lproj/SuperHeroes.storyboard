@@ -23,15 +23,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-ss-dMc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-ss-dMc">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SuperHeroTableViewCellIdentifier" rowHeight="163" id="AbY-YM-c50" userLabel="SuperHeroTableViewCellIdentifier" customClass="SuperHeroTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SuperHeroTableViewCellIdentifier" rowHeight="163" id="oeV-Gk-mce" customClass="SuperHeroTableViewCell" customModule="KataSuperHeroes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="163"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AbY-YM-c50" id="QQ5-ek-ASp">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="162.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oeV-Gk-mce" id="qqq-ei-lKA">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hAL-V2-PGp" userLabel="Photo Image View">
@@ -39,35 +40,29 @@
                                                     <color key="backgroundColor" red="0.1333333333" green="0.15686274510000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Avengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-zD-xEt">
-                                                    <rect key="frame" x="8" y="136" width="584" height="19"/>
+                                                    <rect key="frame" x="8" y="133.5" width="98" height="19"/>
                                                     <fontDescription key="fontDescription" name="ManifoldCF-Regular" family="Manifold CF" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="B1c-zD-xEt" secondAttribute="trailing" id="5ih-Ap-jso"/>
-                                                <constraint firstItem="hAL-V2-PGp" firstAttribute="leading" secondItem="QQ5-ek-ASp" secondAttribute="leading" id="Lc9-d7-tIF"/>
-                                                <constraint firstItem="hAL-V2-PGp" firstAttribute="top" secondItem="QQ5-ek-ASp" secondAttribute="top" id="QSa-ix-sBa"/>
-                                                <constraint firstAttribute="trailing" secondItem="hAL-V2-PGp" secondAttribute="trailing" id="RiG-1M-4Vn"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="B1c-zD-xEt" secondAttribute="leading" id="aKw-GD-mHY"/>
-                                                <constraint firstItem="hAL-V2-PGp" firstAttribute="centerY" secondItem="QQ5-ek-ASp" secondAttribute="centerY" id="ame-1V-NrP"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="B1c-zD-xEt" secondAttribute="bottom" id="myZ-vB-hSi"/>
+                                                <constraint firstItem="hAL-V2-PGp" firstAttribute="centerY" secondItem="qqq-ei-lKA" secondAttribute="centerY" id="7iE-vl-1bn"/>
+                                                <constraint firstItem="hAL-V2-PGp" firstAttribute="centerX" secondItem="qqq-ei-lKA" secondAttribute="centerX" id="FmR-AH-r3A"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="B1c-zD-xEt" secondAttribute="leading" id="Sdp-MZ-2Jm"/>
+                                                <constraint firstItem="hAL-V2-PGp" firstAttribute="height" secondItem="qqq-ei-lKA" secondAttribute="height" id="azX-UP-yMi"/>
+                                                <constraint firstItem="hAL-V2-PGp" firstAttribute="width" secondItem="qqq-ei-lKA" secondAttribute="width" id="nZT-0h-k4j"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="B1c-zD-xEt" secondAttribute="bottom" constant="2" id="vfd-zo-vbe"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <bool key="isElement" value="YES"/>
-                                        </accessibility>
                                         <connections>
-                                            <outlet property="nameLabel" destination="B1c-zD-xEt" id="YbQ-yd-uIb"/>
-                                            <outlet property="photoImageView" destination="hAL-V2-PGp" id="hiq-28-Mcm"/>
-                                            <outlet property="thumbnailImage" destination="hAL-V2-PGp" id="N2N-Us-GYv"/>
+                                            <outlet property="nameLabel" destination="B1c-zD-xEt" id="xCC-BE-LvB"/>
+                                            <outlet property="photoImageView" destination="hAL-V2-PGp" id="eau-dB-EKm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8rJ-ss-dMc" firstAttribute="width" secondItem="1nU-VI-Zdk" secondAttribute="width" id="CaI-7B-qIm"/>
                             <constraint firstItem="8rJ-ss-dMc" firstAttribute="height" secondItem="1nU-VI-Zdk" secondAttribute="height" id="HKj-ue-SO2"/>
@@ -75,6 +70,9 @@
                             <constraint firstItem="8rJ-ss-dMc" firstAttribute="centerX" secondItem="1nU-VI-Zdk" secondAttribute="centerX" id="zaH-9D-SpU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="8rJ-ss-dMc" id="eng-8H-CFJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaD-FF-gYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

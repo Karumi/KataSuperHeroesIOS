@@ -9,9 +9,10 @@
 import Foundation
 import BothamUI
 
-class SuperHeroesPresenter: BothamPresenter {
+class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
 
-    private let ui: SuperHeroesUI
+    private weak var ui: SuperHeroesUI?
+
     private let getSuperHeroes: GetSuperHeroes
 
     init(ui: SuperHeroesUI, getSuperHeroes: GetSuperHeroes) {
@@ -20,10 +21,25 @@ class SuperHeroesPresenter: BothamPresenter {
     }
 
     func viewDidLoad() {
+        ui?.showLoader()
+        getSuperHeroes.execute { superHeroes in
+            self.ui?.hideLoader()
+            if superHeroes.isEmpty {
+                self.ui?.showEmptyCase()
+            }else {
+                self.ui?.showItems(superHeroes)
+            }
+        }
+    }
 
+    func itemWasTapped(item: SuperHero) {
+        
     }
 }
 
-protocol SuperHeroesUI : BothamLoadingUI {
+protocol SuperHeroesUI : BothamUI, BothamLoadingUI {
+
+    func showEmptyCase()
+    func showItems(items: [SuperHero])
 
 }

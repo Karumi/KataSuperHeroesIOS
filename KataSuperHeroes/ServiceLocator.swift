@@ -20,9 +20,16 @@ class ServiceLocator {
 
     private func provideSuperHeroesViewController() -> UIViewController {
         let superHeroesViewController: SuperHeroesViewController = storyBoard.instantiateViewController("SuperHeroesViewController")
-        superHeroesViewController.presenter = provideSuperHeroesPresenter(superHeroesViewController)
+        let presenter = provideSuperHeroesPresenter(superHeroesViewController)
+        let dataSource = provideSuperHeroesDataSource()
+        superHeroesViewController.presenter = presenter
+        superHeroesViewController.dataSource = dataSource
+        superHeroesViewController.delegate = BothamTableViewNavigationDelegate(dataSource: dataSource, presenter: presenter)
         return superHeroesViewController
+    }
 
+    private func provideSuperHeroesDataSource() -> BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell> {
+        return BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell>()
     }
 
     private func provideSuperHeroesPresenter(ui: SuperHeroesUI) -> SuperHeroesPresenter {
@@ -31,7 +38,7 @@ class ServiceLocator {
     }
 
     private func provideGetSuperHeroesUseCase() -> GetSuperHeroes {
-        return GetSuperHeroes()
+        return GetSuperHeroes(repository: SuperHeroesRepository())
     }
 
     private lazy var storyBoard : BothamStoryboard = {

@@ -10,7 +10,7 @@ import Foundation
 
 class SuperHeroesRepository {
 
-    let superHeroes: [SuperHero]
+    private let superHeroes: [SuperHero]
 
     init() {
         self.superHeroes = [
@@ -72,7 +72,7 @@ class SuperHeroesRepository {
                     + "will go to extreme measures to achieve his goals and protect the kingdom "
                     + "of Wakanda."),
             SuperHero(name: "Captain America",
-                photo: NSURL(string: "http://x.annihil.us/u/prod/marvel/i/mg/9/80/537ba5b368b7d.jpg"),
+                photo: NSURL(string: "https://x.annihil.us/u/prod/marvel/i/mg/9/80/537ba5b368b7d.jpg"),
                 isAvenger: true,
                 description: "Captain America represented the pinnacle of human physical perfection. He experienced a "
                     + "time when he was augmented to superhuman levels, but generally performed just below"
@@ -103,8 +103,13 @@ class SuperHeroesRepository {
             ]
     }
 
-    func superHeroesByName(name: String) -> SuperHero? {
-        return superHeroes.filter { $0.name == name }.first
+    func getAll(completion: ([SuperHero]) -> ()) {
+        completion(superHeroes)
+    }
+
+    func superHeroesByName(name: String, completion: (SuperHero?) -> ()) {
+        let superHeroByName = superHeroes.filter { $0.name == name }.first
+        completion(superHeroByName)
     }
 
 }
