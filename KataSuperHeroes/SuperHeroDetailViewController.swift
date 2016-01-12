@@ -13,6 +13,7 @@ import SDWebImage
 
 class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroDetailUI {
 
+    @IBOutlet weak var avengersBadgeImageView: UIImageView!
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
@@ -22,5 +23,6 @@ class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroDet
         userLabel.text = superHero.name
         descriptionLabel.text = superHero.description
         photoImageView.sd_setImageWithURL(superHero.photo)
+        avengersBadgeImageView.hidden = !superHero.isAvenger
     }
 }

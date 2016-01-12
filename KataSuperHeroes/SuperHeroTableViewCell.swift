@@ -15,11 +15,13 @@ class SuperHeroTableViewCell: UITableViewCell, BothamViewCell {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var avengersBadgeImageView: UIImageView!
 
     func configureForItem(item: SuperHero) {
         nameLabel.text = item.name
         nameLabel.accessibilityLabel = item.name
         photoImageView.sd_setImageWithURL(item.photo)
+        avengersBadgeImageView.hidden = !item.isAvenger
         applyImageGradient(photoImageView)
     }
 

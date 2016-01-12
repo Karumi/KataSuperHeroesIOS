@@ -45,10 +45,15 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="3Ig-Px-Hnl" userLabel="Avengers Badge Image VIew">
+                                                    <rect key="frame" x="520" y="75" width="64" height="72"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="hAL-V2-PGp" firstAttribute="centerY" secondItem="qqq-ei-lKA" secondAttribute="centerY" id="7iE-vl-1bn"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3Ig-Px-Hnl" secondAttribute="bottom" constant="8" id="E2r-h8-cMR"/>
                                                 <constraint firstItem="hAL-V2-PGp" firstAttribute="centerX" secondItem="qqq-ei-lKA" secondAttribute="centerX" id="FmR-AH-r3A"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3Ig-Px-Hnl" secondAttribute="trailing" constant="8" id="NtU-zx-mZy"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="B1c-zD-xEt" secondAttribute="leading" id="Sdp-MZ-2Jm"/>
                                                 <constraint firstItem="hAL-V2-PGp" firstAttribute="height" secondItem="qqq-ei-lKA" secondAttribute="height" id="azX-UP-yMi"/>
                                                 <constraint firstItem="hAL-V2-PGp" firstAttribute="width" secondItem="qqq-ei-lKA" secondAttribute="width" id="nZT-0h-k4j"/>
@@ -56,6 +61,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="avengersBadgeImageView" destination="3Ig-Px-Hnl" id="ZbO-Wi-suY"/>
                                             <outlet property="nameLabel" destination="B1c-zD-xEt" id="xCC-BE-LvB"/>
                                             <outlet property="photoImageView" destination="hAL-V2-PGp" id="eau-dB-EKm"/>
                                         </connections>
@@ -104,11 +110,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-eH-mPl" userLabel="Description Label">
-                                <rect key="frame" x="28" y="223.5" width="544" height="368.5"/>
+                                <rect key="frame" x="28" y="223" width="544" height="369"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-lp-hqh" userLabel="Avengers Badge Image VIew">
+                                <rect key="frame" x="528" y="111" width="64" height="72"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.11764705882352941" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -118,13 +127,16 @@
                             <constraint firstItem="Bd7-4D-rrH" firstAttribute="width" secondItem="AEF-qs-Gl8" secondAttribute="width" id="R9B-4J-pgU"/>
                             <constraint firstItem="KvJ-eH-mPl" firstAttribute="top" secondItem="9cs-Na-XQN" secondAttribute="bottom" constant="8" id="VfX-XJ-dSt"/>
                             <constraint firstAttribute="bottomMargin" secondItem="KvJ-eH-mPl" secondAttribute="bottom" constant="8" id="Vlm-MH-Kjf"/>
+                            <constraint firstItem="wb6-lp-hqh" firstAttribute="bottom" secondItem="Bd7-4D-rrH" secondAttribute="bottom" id="WkC-UO-iro"/>
                             <constraint firstItem="9cs-Na-XQN" firstAttribute="leading" secondItem="AEF-qs-Gl8" secondAttribute="leadingMargin" constant="8" id="e1S-ar-ThG"/>
+                            <constraint firstItem="wb6-lp-hqh" firstAttribute="trailing" secondItem="Bd7-4D-rrH" secondAttribute="trailing" constant="-8" id="esJ-5m-JmD"/>
                             <constraint firstItem="9cs-Na-XQN" firstAttribute="top" secondItem="Bd7-4D-rrH" secondAttribute="bottom" constant="12" id="ntQ-Gf-gVa"/>
                             <constraint firstItem="Bd7-4D-rrH" firstAttribute="centerX" secondItem="AEF-qs-Gl8" secondAttribute="centerX" id="vhw-zG-YoH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9cs-Na-XQN" secondAttribute="trailing" constant="8" id="xgh-x3-Air"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="avengersBadgeImageView" destination="wb6-lp-hqh" id="SAn-dK-Non"/>
                         <outlet property="descriptionLabel" destination="KvJ-eH-mPl" id="d1p-lB-EV4"/>
                         <outlet property="photoImageView" destination="Bd7-4D-rrH" id="Lom-0l-S8d"/>
                         <outlet property="userLabel" destination="9cs-Na-XQN" id="mEj-Uo-YxT"/>
@@ -152,4 +164,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_avenger_badge" width="64" height="72"/>
+    </resources>
 </document>
