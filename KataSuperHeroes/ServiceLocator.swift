@@ -18,6 +18,16 @@ class ServiceLocator {
         return navigationController
     }
 
+    func provideSuperHeroDetailPresenter(superHeroName: String) -> UIViewController {
+        let viewController: SuperHeroDetailViewController = storyBoard.instantiateViewController("SuperHeroDetailViewController")
+        viewController.presenter = provideSuperHeroDetailPresenter(viewController, superHeroName: superHeroName)
+        return viewController
+    }
+
+    private func provideSuperHeroDetailPresenter(ui: SuperHeroDetailUI, superHeroName: String) -> SuperHeroDetailPresenter {
+        return SuperHeroDetailPresenter(ui: ui, superHeroName: superHeroName)
+    }
+
     private func provideSuperHeroesViewController() -> UIViewController {
         let superHeroesViewController: SuperHeroesViewController = storyBoard.instantiateViewController("SuperHeroesViewController")
         let presenter = provideSuperHeroesPresenter(superHeroesViewController)
@@ -34,7 +44,7 @@ class ServiceLocator {
 
     private func provideSuperHeroesPresenter(ui: SuperHeroesUI) -> SuperHeroesPresenter {
         let getSuperHeroes = provideGetSuperHeroesUseCase()
-        return SuperHeroesPresenter(ui: ui , getSuperHeroes: getSuperHeroes)
+        return SuperHeroesPresenter(ui: ui , getSuperHeroes: getSuperHeroes, serviceLocator: self)
     }
 
     private func provideGetSuperHeroesUseCase() -> GetSuperHeroes {

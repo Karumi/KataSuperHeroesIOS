@@ -25,7 +25,10 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
     }
 
     func showEmptyCase() {
-
+        //TODO: Implement this shit
     }
 
+    func openSuperHeroDetailScreen(superHeroDetailViewController: UIViewController) {
+        navigationController?.push(superHeroDetailViewController)
+    }
 }

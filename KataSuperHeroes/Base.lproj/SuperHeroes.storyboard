@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-ss-dMc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-ss-dMc">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -76,7 +76,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaD-FF-gYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="230"/>
+            <point key="canvasLocation" x="1082" y="324"/>
+        </scene>
+        <!--Super Hero Detail View Controller-->
+        <scene sceneID="rZG-eB-oju">
+            <objects>
+                <viewController storyboardIdentifier="SuperHeroDetailViewController" id="Eu0-Db-rwp" customClass="SuperHeroDetailViewController" customModule="KataSuperHeroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QYG-mz-kqV"/>
+                        <viewControllerLayoutGuide type="bottom" id="FxP-Oy-3N6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AEF-qs-Gl8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jyy-Rc-klh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="324"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tne-QT-ifu">
