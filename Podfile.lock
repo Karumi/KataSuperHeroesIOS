@@ -1,1 +1,23 @@
+PODS:
+  - BothamUI (1.0.0)
+  - KIF (3.3.1):
+    - KIF/Core (= 3.3.1)
+  - KIF/Core (3.3.1)
+  - Nimble (3.0.0)
+  - SDWebImage (3.7.4):
+    - SDWebImage/Core (= 3.7.4)
+  - SDWebImage/Core (3.7.4)
+
+DEPENDENCIES:
+  - BothamUI
+  - KIF (~> 3.0)
+  - Nimble
+  - SDWebImage
+
+SPEC CHECKSUMS:
+  BothamUI: 47899bef74e940cb07c8413b0ddb2e48eb1b7379
+  KIF: ff9f0e585503871bcd096937cc760081d770c5e2
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  SDWebImage: 247edd7dd80dd6124197b0d6a17846fe9d1df968
+
 COCOAPODS: 0.39.0
