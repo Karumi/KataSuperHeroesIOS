@@ -21,6 +21,7 @@
 		EBDE9B841C451CE500E4B4C2 /* SuperHeroesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE9B831C451CE500E4B4C2 /* SuperHeroesPresenter.swift */; };
 		EBDE9B871C4539B800E4B4C2 /* KataSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE9B861C4539B800E4B4C2 /* KataSuperHeroesViewController.swift */; };
 		EBDE9B891C453AEA00E4B4C2 /* SuperHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE9B881C453AEA00E4B4C2 /* SuperHero.swift */; };
+		EBDE9B8B1C453E3800E4B4C2 /* SuperHeroesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE9B8A1C453E3800E4B4C2 /* SuperHeroesRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		EBDE9B831C451CE500E4B4C2 /* SuperHeroesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesPresenter.swift; sourceTree = "<group>"; };
 		EBDE9B861C4539B800E4B4C2 /* KataSuperHeroesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KataSuperHeroesViewController.swift; sourceTree = "<group>"; };
 		EBDE9B881C453AEA00E4B4C2 /* SuperHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHero.swift; sourceTree = "<group>"; };
+		EBDE9B8A1C453E3800E4B4C2 /* SuperHeroesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			children = (
 				EBDE9B801C451CAF00E4B4C2 /* UseCase */,
 				EBDE9B881C453AEA00E4B4C2 /* SuperHero.swift */,
+				EBDE9B8A1C453E3800E4B4C2 /* SuperHeroesRepository.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			files = (
 				EBDE9B841C451CE500E4B4C2 /* SuperHeroesPresenter.swift in Sources */,
 				EBC230771C45016A007D5068 /* SuperHeroesViewController.swift in Sources */,
+				EBDE9B8B1C453E3800E4B4C2 /* SuperHeroesRepository.swift in Sources */,
 				EBDE9B871C4539B800E4B4C2 /* KataSuperHeroesViewController.swift in Sources */,
 				EBDE9B7C1C4519A400E4B4C2 /* UIColor.swift in Sources */,
 				EBC230751C45016A007D5068 /* AppDelegate.swift in Sources */,
