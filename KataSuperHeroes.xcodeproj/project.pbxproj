@@ -22,6 +22,7 @@
 		EBDE9B871C4539B800E4B4C2 /* KataSuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE9B861C4539B800E4B4C2 /* KataSuperHeroesViewController.swift */; };
 		EBDE9B891C453AEA00E4B4C2 /* SuperHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE9B881C453AEA00E4B4C2 /* SuperHero.swift */; };
 		EBDE9B8B1C453E3800E4B4C2 /* SuperHeroesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE9B8A1C453E3800E4B4C2 /* SuperHeroesRepository.swift */; };
+		EBDE9B8E1C45448F00E4B4C2 /* SuperHeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDE9B8D1C45448F00E4B4C2 /* SuperHeroTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		EBDE9B861C4539B800E4B4C2 /* KataSuperHeroesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KataSuperHeroesViewController.swift; sourceTree = "<group>"; };
 		EBDE9B881C453AEA00E4B4C2 /* SuperHero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHero.swift; sourceTree = "<group>"; };
 		EBDE9B8A1C453E3800E4B4C2 /* SuperHeroesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesRepository.swift; sourceTree = "<group>"; };
+		EBDE9B8D1C45448F00E4B4C2 /* SuperHeroTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		EBDE9B7D1C451C3B00E4B4C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EBDE9B8C1C45448100E4B4C2 /* Table View */,
 				EBC230761C45016A007D5068 /* SuperHeroesViewController.swift */,
 			);
 			name = View;
@@ -194,6 +197,14 @@
 				EBDE9B861C4539B800E4B4C2 /* KataSuperHeroesViewController.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		EBDE9B8C1C45448100E4B4C2 /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				EBDE9B8D1C45448F00E4B4C2 /* SuperHeroTableViewCell.swift */,
+			);
+			name = "Table View";
 			sourceTree = "<group>";
 		};
 		F8DBCE5CE562FDFE08D23C5E /* Frameworks */ = {
@@ -406,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBDE9B841C451CE500E4B4C2 /* SuperHeroesPresenter.swift in Sources */,
+				EBDE9B8E1C45448F00E4B4C2 /* SuperHeroTableViewCell.swift in Sources */,
 				EBC230771C45016A007D5068 /* SuperHeroesViewController.swift in Sources */,
 				EBDE9B8B1C453E3800E4B4C2 /* SuperHeroesRepository.swift in Sources */,
 				EBDE9B871C4539B800E4B4C2 /* KataSuperHeroesViewController.swift in Sources */,
