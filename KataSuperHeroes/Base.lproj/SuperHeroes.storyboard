@@ -47,7 +47,7 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="3Ig-Px-Hnl" userLabel="Avengers Badge Image VIew">
                                                     <rect key="frame" x="520" y="75" width="64" height="72"/>
-                                                    <accessibility key="accessibilityConfiguration" label="Avengers Badge">
+                                                    <accessibility key="accessibilityConfiguration">
                                                         <bool key="isElement" value="YES"/>
                                                     </accessibility>
                                                 </imageView>
@@ -116,19 +116,19 @@
                                     <constraint firstAttribute="height" constant="163" id="cI7-ej-w94"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-Na-XQN" userLabel="Name Label">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-Na-XQN" userLabel="Name Label">
                                 <rect key="frame" x="28" y="195" width="544" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-eH-mPl" userLabel="Description Label">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-eH-mPl" userLabel="Description Label">
                                 <rect key="frame" x="28" y="223" width="544" height="369"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-lp-hqh" userLabel="Avengers Badge Image VIew">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-lp-hqh" userLabel="Avengers Badge Image VIew">
                                 <rect key="frame" x="528" y="111" width="64" height="72"/>
                                 <accessibility key="accessibilityConfiguration" label="Avengers Badge">
                                     <bool key="isElement" value="YES"/>

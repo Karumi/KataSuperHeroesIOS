@@ -104,12 +104,26 @@ class SuperHeroesRepository {
     }
 
     func getAll(completion: ([SuperHero]) -> ()) {
-        completion(superHeroes)
+        delay(1.5) {
+            completion(self.superHeroes)
+        }
     }
 
     func getSuperHeroeByName(name: String, completion: (SuperHero?) -> ()) {
-        let superHeroByName = superHeroes.filter { $0.name == name }.first
-        completion(superHeroByName)
+        delay(1.5) {
+            let superHeroByName = self.superHeroes.filter { $0.name == name }.first
+            completion(superHeroByName)
+        }
+    }
+
+    private func delay(delay: Double, closure: ()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure
+        )
     }
 
 }
