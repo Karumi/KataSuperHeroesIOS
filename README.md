@@ -71,6 +71,6 @@ limitations under the License.
 [nimble]: https://github.com/Quick/Nimble
 [dependencyInjection]: http://www.martinfowler.com/articles/injection.html
 [testDoubles]: http://www.martinfowler.com/bliki/TestDouble.html
-[applicationScreencast]: ./art/ApplicationScreencast.gif
-[superHeroesViewControllerScreenshot]: ./art/MainActivityScreenshot.png
-[superHeroDetailViewControllerScreenshot]: ./art/SuperHeroDetailActivityScreenshot.png
+[applicationScreencast]: ./art/applicationScreencast.gif
+[superHeroesViewControllerScreenshot]: ./art/superHeroesViewControllerScreenshot.png
+[superHeroDetailViewControllerScreenshot]: ./art/superHeroDetailViewControllerScreenshot.png

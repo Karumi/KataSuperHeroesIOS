@@ -117,13 +117,13 @@
                                 </constraints>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-Na-XQN" userLabel="Name Label">
-                                <rect key="frame" x="28" y="195" width="544" height="20.5"/>
+                                <rect key="frame" x="28" y="233" width="544" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-eH-mPl" userLabel="Description Label">
-                                <rect key="frame" x="28" y="223" width="544" height="369"/>
+                                <rect key="frame" x="28" y="261" width="544" height="331"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -146,7 +146,7 @@
                             <constraint firstItem="wb6-lp-hqh" firstAttribute="bottom" secondItem="Bd7-4D-rrH" secondAttribute="bottom" id="WkC-UO-iro"/>
                             <constraint firstItem="9cs-Na-XQN" firstAttribute="leading" secondItem="AEF-qs-Gl8" secondAttribute="leadingMargin" constant="8" id="e1S-ar-ThG"/>
                             <constraint firstItem="wb6-lp-hqh" firstAttribute="trailing" secondItem="Bd7-4D-rrH" secondAttribute="trailing" constant="-8" id="esJ-5m-JmD"/>
-                            <constraint firstItem="9cs-Na-XQN" firstAttribute="top" secondItem="Bd7-4D-rrH" secondAttribute="bottom" constant="12" id="ntQ-Gf-gVa"/>
+                            <constraint firstItem="9cs-Na-XQN" firstAttribute="top" secondItem="Bd7-4D-rrH" secondAttribute="bottom" constant="50" id="ntQ-Gf-gVa"/>
                             <constraint firstItem="Bd7-4D-rrH" firstAttribute="centerX" secondItem="AEF-qs-Gl8" secondAttribute="centerX" id="vhw-zG-YoH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9cs-Na-XQN" secondAttribute="trailing" constant="8" id="xgh-x3-Air"/>
                         </constraints>
