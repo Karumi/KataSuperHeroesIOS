@@ -11,7 +11,7 @@ import Foundation
 
 class MockSuperHeroesRepository: SuperHeroesRepository {
 
-    private var superHeroes = [SuperHero]()
+    var superHeroes = [SuperHero]()
 
     override func getAll(completion: ([SuperHero]) -> ()) {
         completion(superHeroes)
