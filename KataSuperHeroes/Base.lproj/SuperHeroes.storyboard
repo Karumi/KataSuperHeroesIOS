@@ -130,6 +130,9 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-lp-hqh" userLabel="Avengers Badge Image VIew">
                                 <rect key="frame" x="528" y="111" width="64" height="72"/>
+                                <accessibility key="accessibilityConfiguration" label="Avengers Badge">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.11764705882352941" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>

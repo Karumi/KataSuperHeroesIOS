@@ -23,7 +23,6 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
 
         let emptyCaseText = tester().waitForViewWithAccessibilityLabel("¯\\_(ツ)_/¯")
             as! UILabel
-        expect(emptyCaseText.hidden).to(beFalse())
         expect(emptyCaseText.text).to(equal("¯\\_(ツ)_/¯"))
     }
 
