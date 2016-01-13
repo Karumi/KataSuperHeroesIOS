@@ -68,16 +68,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¯\_(ツ)_/¯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOF-w6-oKO">
+                                <rect key="frame" x="265" y="290" width="71" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="¯\_(ツ)_/¯"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="kOF-w6-oKO" firstAttribute="centerY" secondItem="1nU-VI-Zdk" secondAttribute="centerY" id="1Zh-Rr-nx2"/>
                             <constraint firstItem="8rJ-ss-dMc" firstAttribute="width" secondItem="1nU-VI-Zdk" secondAttribute="width" id="CaI-7B-qIm"/>
                             <constraint firstItem="8rJ-ss-dMc" firstAttribute="height" secondItem="1nU-VI-Zdk" secondAttribute="height" id="HKj-ue-SO2"/>
                             <constraint firstItem="8rJ-ss-dMc" firstAttribute="centerY" secondItem="1nU-VI-Zdk" secondAttribute="centerY" id="UEf-1Q-VfO"/>
+                            <constraint firstItem="kOF-w6-oKO" firstAttribute="centerX" secondItem="1nU-VI-Zdk" secondAttribute="centerX" id="uSz-YE-guA"/>
                             <constraint firstItem="8rJ-ss-dMc" firstAttribute="centerX" secondItem="1nU-VI-Zdk" secondAttribute="centerX" id="zaH-9D-SpU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Kata Super Heroes" id="wfY-wT-rF3"/>
                     <connections>
+                        <outlet property="emptyCaseView" destination="kOF-w6-oKO" id="NiL-QQ-7jJ"/>
                         <outlet property="tableView" destination="8rJ-ss-dMc" id="eng-8H-CFJ"/>
                     </connections>
                 </viewController>
@@ -104,7 +114,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-Na-XQN" userLabel="Name Label">
-                                <rect key="frame" x="28" y="195" width="544" height="20.5"/>
+                                <rect key="frame" x="28" y="195" width="544" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

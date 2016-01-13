@@ -18,9 +18,21 @@ class ServiceLocator {
         return navigationController
     }
 
-    func provideSuperHeroDetailPresenter(superHeroName: String) -> UIViewController {
+    func provideSuperHeroesViewController() -> UIViewController {
+        let superHeroesViewController: SuperHeroesViewController =
+        storyBoard.instantiateViewController("SuperHeroesViewController")
+        let presenter = provideSuperHeroesPresenter(superHeroesViewController)
+        let dataSource = provideSuperHeroesDataSource()
+        superHeroesViewController.presenter = presenter
+        superHeroesViewController.dataSource = dataSource
+        superHeroesViewController.delegate =
+            BothamTableViewNavigationDelegate(dataSource: dataSource, presenter: presenter)
+        return superHeroesViewController
+    }
+
+    func provideSuperHeroDetailViewController(superHeroName: String) -> UIViewController {
         let viewController: SuperHeroDetailViewController =
-            storyBoard.instantiateViewController("SuperHeroDetailViewController")
+        storyBoard.instantiateViewController("SuperHeroDetailViewController")
         viewController.presenter = provideSuperHeroDetailPresenter(viewController, superHeroName: superHeroName)
         return viewController
     }
@@ -31,25 +43,13 @@ class ServiceLocator {
         return SuperHeroDetailPresenter(ui: ui, superHeroName: superHeroName, getSuperHeroByName: getSuperHeroByName)
     }
 
-    private func provideSuperHeroesViewController() -> UIViewController {
-        let superHeroesViewController: SuperHeroesViewController =
-            storyBoard.instantiateViewController("SuperHeroesViewController")
-        let presenter = provideSuperHeroesPresenter(superHeroesViewController)
-        let dataSource = provideSuperHeroesDataSource()
-        superHeroesViewController.presenter = presenter
-        superHeroesViewController.dataSource = dataSource
-        superHeroesViewController.delegate =
-            BothamTableViewNavigationDelegate(dataSource: dataSource, presenter: presenter)
-        return superHeroesViewController
-    }
-
     private func provideSuperHeroesDataSource() -> BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell> {
         return BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell>()
     }
 
     private func provideSuperHeroesPresenter(ui: SuperHeroesUI) -> SuperHeroesPresenter {
         let getSuperHeroes = provideGetSuperHeroesUseCase()
-        return SuperHeroesPresenter(ui: ui, getSuperHeroes: getSuperHeroes, serviceLocator: self)
+        return SuperHeroesPresenter(ui: ui, getSuperHeroes: getSuperHeroes)
     }
 
     private func provideGetSuperHeroesUseCase() -> GetSuperHeroes {

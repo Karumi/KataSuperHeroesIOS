@@ -12,6 +12,7 @@ import BothamUI
 class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewController, SuperHeroesUI {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyCaseView: UILabel!
 
     var dataSource: BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell>!
     var delegate: UITableViewDelegate!
@@ -26,7 +27,7 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
     }
 
     func showEmptyCase() {
-        //TODO: Implement this shit
+        emptyCaseView.hidden = false
     }
 
     func openSuperHeroDetailScreen(superHeroDetailViewController: UIViewController) {

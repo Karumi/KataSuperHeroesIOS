@@ -13,6 +13,7 @@
 		EB8706011C46510300B66C19 /* KIFTestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706001C46510300B66C19 /* KIFTestActor.swift */; };
 		EB8706031C46513E00B66C19 /* SuperHeroesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706021C46513E00B66C19 /* SuperHeroesViewControllerTests.swift */; };
 		EB8706051C4653AC00B66C19 /* AcceptanceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706041C4653AC00B66C19 /* AcceptanceTestCase.swift */; };
+		EB8706091C4656C800B66C19 /* MockSuperHeroesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706081C4656C800B66C19 /* MockSuperHeroesRepository.swift */; };
 		EBC230751C45016A007D5068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC230741C45016A007D5068 /* AppDelegate.swift */; };
 		EBC230771C45016A007D5068 /* SuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC230761C45016A007D5068 /* SuperHeroesViewController.swift */; };
 		EBC2307A1C45016A007D5068 /* SuperHeroes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC230781C45016A007D5068 /* SuperHeroes.storyboard */; };
@@ -52,6 +53,7 @@
 		EB8706001C46510300B66C19 /* KIFTestActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KIFTestActor.swift; sourceTree = "<group>"; };
 		EB8706021C46513E00B66C19 /* SuperHeroesViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesViewControllerTests.swift; sourceTree = "<group>"; };
 		EB8706041C4653AC00B66C19 /* AcceptanceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptanceTestCase.swift; sourceTree = "<group>"; };
+		EB8706081C4656C800B66C19 /* MockSuperHeroesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSuperHeroesRepository.swift; sourceTree = "<group>"; };
 		EBC230711C45016A007D5068 /* KataSuperHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KataSuperHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC230741C45016A007D5068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBC230761C45016A007D5068 /* SuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroesViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			name = "Super Heroes";
 			sourceTree = "<group>";
 		};
+		EB8706071C4656B700B66C19 /* Test Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				EB8706081C4656C800B66C19 /* MockSuperHeroesRepository.swift */,
+			);
+			name = "Test Doubles";
+			sourceTree = "<group>";
+		};
 		EBC230681C45016A007D5068 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				EB8706061C4653C400B66C19 /* Super Heroes */,
+				EB8706071C4656B700B66C19 /* Test Doubles */,
 				EB8705FD1C46508400B66C19 /* Extensions */,
 				EB8706041C4653AC00B66C19 /* AcceptanceTestCase.swift */,
 				EBC2308B1C45016A007D5068 /* Info.plist */,
@@ -470,6 +481,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB8706091C4656C800B66C19 /* MockSuperHeroesRepository.swift in Sources */,
 				EB8706011C46510300B66C19 /* KIFTestActor.swift in Sources */,
 				EB8705FF1C46508E00B66C19 /* XCTestCase.swift in Sources */,
 				EB8706051C4653AC00B66C19 /* AcceptanceTestCase.swift in Sources */,

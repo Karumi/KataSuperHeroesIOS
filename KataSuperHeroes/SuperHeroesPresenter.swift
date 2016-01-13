@@ -13,12 +13,10 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
 
     private weak var ui: SuperHeroesUI?
     private let getSuperHeroes: GetSuperHeroes
-    private let serviceLocator: ServiceLocator
 
-    init(ui: SuperHeroesUI, getSuperHeroes: GetSuperHeroes, serviceLocator: ServiceLocator) {
+    init(ui: SuperHeroesUI, getSuperHeroes: GetSuperHeroes) {
         self.ui = ui
         self.getSuperHeroes = getSuperHeroes
-        self.serviceLocator = serviceLocator
     }
 
     func viewDidLoad() {
@@ -34,7 +32,7 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
     }
 
     func itemWasTapped(item: SuperHero) {
-        let superHeroDetailViewController = serviceLocator.provideSuperHeroDetailPresenter(item.name)
+        let superHeroDetailViewController = ServiceLocator().provideSuperHeroDetailViewController(item.name)
         ui?.openSuperHeroDetailScreen(superHeroDetailViewController)
     }
 }
