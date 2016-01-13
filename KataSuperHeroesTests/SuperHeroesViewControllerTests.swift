@@ -19,15 +19,16 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         givenThereAreNoSuperHeroes()
 
         openSuperHeroesViewController()
+
         let emptyCaseText = tester().waitForViewWithAccessibilityLabel("¯\\_(ツ)_/¯")
             as! UILabel
-
         expect(emptyCaseText.hidden).to(beFalse())
         expect(emptyCaseText.text).to(equal("¯\\_(ツ)_/¯"))
     }
 
     func testShowsSuperHeroNamesIfThereAreSuperHeroes() {
         let superHeroes = givenThereAreSomeSuperHeroes()
+
         openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
@@ -40,6 +41,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
 
     func testShowsAvengersBadgeIfASuperHeroIsPartOfTheAvengersTeam() {
         let superHeroes = givenThereAreSomeAvengers()
+
         openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
@@ -52,6 +54,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
 
     func testDoNotShowAvengersBadgeIfSuperHeroesAreNotPartOfTheAvengersTeam() {
         let superHeroes = givenThereAreSomeSuperHeroes()
+
         openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
@@ -68,6 +71,23 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         openSuperHeroesViewController()
 
         tester().waitForAbsenceOfViewWithAccessibilityLabel("¯\\_(ツ)_/¯")
+    }
+
+    func testDoNotShowLoadingViewIfThereAreSomeSuperHeroes() {
+        givenThereAreSomeSuperHeroes()
+
+        openSuperHeroesViewController()
+
+        tester().waitForAbsenceOfViewWithAccessibilityLabel("LoadingView")
+    }
+
+    func testShowsTheExactNumberOfSuperHeroes() {
+        let superHeroes = givenThereAreSomeSuperHeroes()
+
+        openSuperHeroesViewController()
+
+        let tableView = tester().waitForViewWithAccessibilityLabel("SuperHeroesTableView") as! UITableView
+        expect(tableView.numberOfRowsInSection(0)).to(equal(superHeroes.count))
     }
 
     private func givenThereAreSomeAvengers() -> [SuperHero] {
