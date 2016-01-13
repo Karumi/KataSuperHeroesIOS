@@ -18,7 +18,8 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
     func testShowsEmptyCaseIfThereAreNoSuperHeroes() {
         openSuperHeroesViewController()
 
-        let emptyCaseText = tester().waitForViewWithAccessibilityLabel("¯\\_(ツ)_/¯") as! UILabel
+        let emptyCaseText = tester().waitForViewWithAccessibilityLabel("¯\\_(ツ)_/¯")
+            as! UILabel
 
         expect(emptyCaseText.hidden).to(beFalse())
         expect(emptyCaseText.text).to(equal("¯\\_(ツ)_/¯"))
