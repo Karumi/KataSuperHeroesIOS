@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		4C7B6CBB70442DF5D76C6FB1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC32F3D31A7392656DF9EC8 /* Pods.framework */; };
 		A49766FD2BE797878EB6F0FF /* Pods_KataSuperHeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01257CE4FD3D58EBF11F8BFE /* Pods_KataSuperHeroesTests.framework */; };
+		EB8705FF1C46508E00B66C19 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8705FE1C46508E00B66C19 /* XCTestCase.swift */; };
+		EB8706011C46510300B66C19 /* KIFTestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706001C46510300B66C19 /* KIFTestActor.swift */; };
+		EB8706031C46513E00B66C19 /* SuperHeroesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706021C46513E00B66C19 /* SuperHeroesViewControllerTests.swift */; };
+		EB8706051C4653AC00B66C19 /* AcceptanceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706041C4653AC00B66C19 /* AcceptanceTestCase.swift */; };
 		EBC230751C45016A007D5068 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC230741C45016A007D5068 /* AppDelegate.swift */; };
 		EBC230771C45016A007D5068 /* SuperHeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC230761C45016A007D5068 /* SuperHeroesViewController.swift */; };
 		EBC2307A1C45016A007D5068 /* SuperHeroes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC230781C45016A007D5068 /* SuperHeroes.storyboard */; };
 		EBC2307C1C45016A007D5068 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC2307B1C45016A007D5068 /* Assets.xcassets */; };
 		EBC2307F1C45016A007D5068 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC2307D1C45016A007D5068 /* LaunchScreen.storyboard */; };
-		EBC2308A1C45016A007D5068 /* KataSuperHeroesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC230891C45016A007D5068 /* KataSuperHeroesTests.swift */; };
 		EBDB2D091C4560D0001FC84B /* SuperHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDB2D081C4560D0001FC84B /* SuperHeroDetailViewController.swift */; };
 		EBDB2D0B1C456129001FC84B /* SuperHeroDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDB2D0A1C456129001FC84B /* SuperHeroDetailPresenter.swift */; };
 		EBDB2D0D1C456410001FC84B /* GetSuperHeroByName.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDB2D0C1C456410001FC84B /* GetSuperHeroByName.swift */; };
@@ -45,6 +48,10 @@
 		638BC0F03D2B4AAC2709B7A1 /* Pods-KataSuperHeroesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataSuperHeroesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests.release.xcconfig"; sourceTree = "<group>"; };
 		7FC32F3D31A7392656DF9EC8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D2D75CBF7668CD1D8265AD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		EB8705FE1C46508E00B66C19 /* XCTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		EB8706001C46510300B66C19 /* KIFTestActor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KIFTestActor.swift; sourceTree = "<group>"; };
+		EB8706021C46513E00B66C19 /* SuperHeroesViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroesViewControllerTests.swift; sourceTree = "<group>"; };
+		EB8706041C4653AC00B66C19 /* AcceptanceTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptanceTestCase.swift; sourceTree = "<group>"; };
 		EBC230711C45016A007D5068 /* KataSuperHeroes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KataSuperHeroes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC230741C45016A007D5068 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBC230761C45016A007D5068 /* SuperHeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroesViewController.swift; sourceTree = "<group>"; };
@@ -53,7 +60,6 @@
 		EBC2307E1C45016A007D5068 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EBC230801C45016A007D5068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBC230851C45016A007D5068 /* KataSuperHeroesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KataSuperHeroesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EBC230891C45016A007D5068 /* KataSuperHeroesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KataSuperHeroesTests.swift; sourceTree = "<group>"; };
 		EBC2308B1C45016A007D5068 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBDB2D081C4560D0001FC84B /* SuperHeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailViewController.swift; sourceTree = "<group>"; };
 		EBDB2D0A1C456129001FC84B /* SuperHeroDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuperHeroDetailPresenter.swift; sourceTree = "<group>"; };
@@ -99,6 +105,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EB8705FD1C46508400B66C19 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB8705FE1C46508E00B66C19 /* XCTestCase.swift */,
+				EB8706001C46510300B66C19 /* KIFTestActor.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		EB8706061C4653C400B66C19 /* Super Heroes */ = {
+			isa = PBXGroup;
+			children = (
+				EB8706021C46513E00B66C19 /* SuperHeroesViewControllerTests.swift */,
+			);
+			name = "Super Heroes";
+			sourceTree = "<group>";
+		};
 		EBC230681C45016A007D5068 = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +161,9 @@
 		EBC230881C45016A007D5068 /* KataSuperHeroesTests */ = {
 			isa = PBXGroup;
 			children = (
-				EBC230891C45016A007D5068 /* KataSuperHeroesTests.swift */,
+				EB8706061C4653C400B66C19 /* Super Heroes */,
+				EB8705FD1C46508400B66C19 /* Extensions */,
+				EB8706041C4653AC00B66C19 /* AcceptanceTestCase.swift */,
 				EBC2308B1C45016A007D5068 /* Info.plist */,
 			);
 			path = KataSuperHeroesTests;
@@ -445,7 +470,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBC2308A1C45016A007D5068 /* KataSuperHeroesTests.swift in Sources */,
+				EB8706011C46510300B66C19 /* KIFTestActor.swift in Sources */,
+				EB8705FF1C46508E00B66C19 /* XCTestCase.swift in Sources */,
+				EB8706051C4653AC00B66C19 /* AcceptanceTestCase.swift in Sources */,
+				EB8706031C46513E00B66C19 /* SuperHeroesViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
