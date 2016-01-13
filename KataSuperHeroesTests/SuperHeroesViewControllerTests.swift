@@ -126,8 +126,8 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
     }
 
     private func openSuperHeroesViewController() {
-        let superHeroesViewController = ServiceLocator().
-            provideSuperHeroesViewController() as! SuperHeroesViewController
+        let superHeroesViewController = ServiceLocator()
+            .provideSuperHeroesViewController() as! SuperHeroesViewController
         superHeroesViewController.presenter = SuperHeroesPresenter(ui: superHeroesViewController,
                 getSuperHeroes: GetSuperHeroes(repository: repository))
         let rootViewController = UINavigationController()
