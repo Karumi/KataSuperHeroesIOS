@@ -47,6 +47,9 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="3Ig-Px-Hnl" userLabel="Avengers Badge Image VIew">
                                                     <rect key="frame" x="520" y="75" width="64" height="72"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Avengers Badge">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
                                                 </imageView>
                                             </subviews>
                                             <constraints>

@@ -19,9 +19,14 @@ class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroDet
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 
-    func showSuperHero(superHero: SuperHero) {
+    func showSuperHero(superHero: SuperHero?) {
+        guard let superHero = superHero else {
+            return
+        }
         userLabel.text = superHero.name
+        userLabel.accessibilityLabel = "Name: \(superHero.name)"
         descriptionLabel.text = superHero.description
+        descriptionLabel.accessibilityLabel = "Description: \(superHero.name)"
         photoImageView.sd_setImageWithURL(superHero.photo)
         avengersBadgeImageView.hidden = !superHero.isAvenger
     }

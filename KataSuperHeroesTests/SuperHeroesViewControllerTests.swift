@@ -9,6 +9,7 @@
 import Foundation
 import KIF
 import Nimble
+import UIKit
 @testable import KataSuperHeroes
 
 class SuperHeroesViewControllerTests: AcceptanceTestCase {
@@ -90,6 +91,19 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         expect(tableView.numberOfRowsInSection(0)).to(equal(superHeroes.count))
     }
 
+    func testOpensSuperHeroDetailViewControllerOnSuperHeroTapped() {
+        let superHeroIndex = 1
+        let superHeroes = givenThereAreSomeSuperHeroes()
+        let superHero = superHeroes[superHeroIndex]
+        openSuperHeroesViewController()
+
+        tester().waitForViewWithAccessibilityLabel(superHero.name)
+        tester().tapRowAtIndexPath(NSIndexPath(forRow: superHeroIndex, inSection: 0),
+            inTableViewWithAccessibilityIdentifier: "SuperHeroesTableView")
+
+        tester().waitForViewWithAccessibilityLabel(superHero.name)
+    }
+
     private func givenThereAreSomeAvengers() -> [SuperHero] {
         return givenThereAreSomeSuperHeroes(avengers: true)
     }
@@ -112,9 +126,12 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
     }
 
     private func openSuperHeroesViewController() {
-        let superHeroesViewController = ServiceLocator().provideSuperHeroesViewController() as! SuperHeroesViewController
+        let superHeroesViewController = ServiceLocator().
+            provideSuperHeroesViewController() as! SuperHeroesViewController
         superHeroesViewController.presenter = SuperHeroesPresenter(ui: superHeroesViewController,
                 getSuperHeroes: GetSuperHeroes(repository: repository))
-        presentViewController(superHeroesViewController)
+        let rootViewController = UINavigationController()
+        rootViewController.viewControllers = [superHeroesViewController]
+        presentViewController(rootViewController)
     }
 }

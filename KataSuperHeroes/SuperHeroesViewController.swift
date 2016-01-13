@@ -22,6 +22,7 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
         tableView.delegate = delegate
         tableView.tableFooterView = UIView()
         tableView.accessibilityLabel = "SuperHeroesTableView"
+        tableView.accessibilityIdentifier = "SuperHeroesTableView"
         configureNavigationBarBackButton()
         super.viewDidLoad()
     }
