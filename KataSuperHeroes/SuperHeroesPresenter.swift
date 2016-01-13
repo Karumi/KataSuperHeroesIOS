@@ -15,7 +15,7 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
     private let getSuperHeroes: GetSuperHeroes
     private let serviceLocator: ServiceLocator
 
-    init(ui: SuperHeroesUI, getSuperHeroes: GetSuperHeroes,serviceLocator: ServiceLocator) {
+    init(ui: SuperHeroesUI, getSuperHeroes: GetSuperHeroes, serviceLocator: ServiceLocator) {
         self.ui = ui
         self.getSuperHeroes = getSuperHeroes
         self.serviceLocator = serviceLocator
@@ -27,7 +27,7 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
             self.ui?.hideLoader()
             if superHeroes.isEmpty {
                 self.ui?.showEmptyCase()
-            }else {
+            } else {
                 self.ui?.showItems(superHeroes)
             }
         }
@@ -39,7 +39,7 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
     }
 }
 
-protocol SuperHeroesUI : BothamUI, BothamLoadingUI {
+protocol SuperHeroesUI: BothamUI, BothamLoadingUI {
 
     func showEmptyCase()
     func showItems(items: [SuperHero])

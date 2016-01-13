@@ -19,23 +19,27 @@ class ServiceLocator {
     }
 
     func provideSuperHeroDetailPresenter(superHeroName: String) -> UIViewController {
-        let viewController: SuperHeroDetailViewController = storyBoard.instantiateViewController("SuperHeroDetailViewController")
+        let viewController: SuperHeroDetailViewController =
+            storyBoard.instantiateViewController("SuperHeroDetailViewController")
         viewController.presenter = provideSuperHeroDetailPresenter(viewController, superHeroName: superHeroName)
         return viewController
     }
 
-    private func provideSuperHeroDetailPresenter(ui: SuperHeroDetailUI, superHeroName: String) -> SuperHeroDetailPresenter {
+    private func provideSuperHeroDetailPresenter(ui: SuperHeroDetailUI,
+        superHeroName: String) -> SuperHeroDetailPresenter {
         let getSuperHeroByName = GetSuperHeroByName(repository: SuperHeroesRepository())
         return SuperHeroDetailPresenter(ui: ui, superHeroName: superHeroName, getSuperHeroByName: getSuperHeroByName)
     }
 
     private func provideSuperHeroesViewController() -> UIViewController {
-        let superHeroesViewController: SuperHeroesViewController = storyBoard.instantiateViewController("SuperHeroesViewController")
+        let superHeroesViewController: SuperHeroesViewController =
+            storyBoard.instantiateViewController("SuperHeroesViewController")
         let presenter = provideSuperHeroesPresenter(superHeroesViewController)
         let dataSource = provideSuperHeroesDataSource()
         superHeroesViewController.presenter = presenter
         superHeroesViewController.dataSource = dataSource
-        superHeroesViewController.delegate = BothamTableViewNavigationDelegate(dataSource: dataSource, presenter: presenter)
+        superHeroesViewController.delegate =
+            BothamTableViewNavigationDelegate(dataSource: dataSource, presenter: presenter)
         return superHeroesViewController
     }
 
@@ -45,14 +49,14 @@ class ServiceLocator {
 
     private func provideSuperHeroesPresenter(ui: SuperHeroesUI) -> SuperHeroesPresenter {
         let getSuperHeroes = provideGetSuperHeroesUseCase()
-        return SuperHeroesPresenter(ui: ui , getSuperHeroes: getSuperHeroes, serviceLocator: self)
+        return SuperHeroesPresenter(ui: ui, getSuperHeroes: getSuperHeroes, serviceLocator: self)
     }
 
     private func provideGetSuperHeroesUseCase() -> GetSuperHeroes {
         return GetSuperHeroes(repository: SuperHeroesRepository())
     }
 
-    private lazy var storyBoard : BothamStoryboard = {
+    private lazy var storyBoard: BothamStoryboard = {
         return BothamStoryboard(name: "SuperHeroes")
     }()
 
