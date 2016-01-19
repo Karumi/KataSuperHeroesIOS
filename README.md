@@ -8,7 +8,7 @@
 
 ---
 
-## Tasks
+## Getting started
 
 This repository contains an iOS application written in Swift to show Super Heroes information:
 
@@ -25,11 +25,30 @@ This Application is based on two ViewControllers:
 ![SuperHeroDetailViewControllerScreenshot][superHeroDetailViewControllerScreenshot]
 
 
-**Your task as iOS Developer is to write all the UI tests needed to check if the application UI is working as should. The application architecture, dependencies and configuration is ready to just start writing tests. In this project you'll find a testable code ready to be able to replace production code with test doubles easily and KIF to be able to interact with the application user interface.**
+The application architecture, dependencies and configuration is ready to just start writing tests. In this project you'll find all the classes ready to be able to replace production code with test doubles easily and KIF to be able to interact with the application user interface. The accessibility labels needed to interact with the UI using KIF are already configured.
 
-**This repository is ready to build the application, pass the checkstyle and your tests in Travis-CI environments. Our recommendation for this exercise is to fork this repository, checkout to the brach kata-super-heroes and start testing the application.**
+## Tasks
 
-Before to start, execute the application, explore it manually and review the code to design your test scenarios.
+Your task as iOS Developer is to **write all the UI tests** needed to check if the Application UI is working as it should. 
+
+**This repository is ready to build the application, pass the checkstyle and your tests in Travis-CI environments.**
+
+Our recommendation for this exercise is:
+
+  * Before starting
+    1. Fork this repository.
+    2. Checkout `kata-super-heroes` branch.
+    3. Execute the application, explore it manually and make yourself familiar with the code.
+    4. Execute `SuperHeroesViewControllerTests` and watch the only test it contains pass.
+
+  * To help you get started, these are some test cases for `SuperHeroesViewControllerTests`:     
+    1. Setup mocked `SuperHeroesRepository` in `SuperHeroesViewControllerTests` to return a list of some Super Heroes.
+    2. Test that TableView is listing the correct number of elements when `SuperHeroesRepository` returns a list of some Super Heroes.
+    3. Test that each of this elements contains the correct Super Hero name.
+
+## Considerations
+
+* If you get stuck, `master` branch contains already solved tests for `SuperHeroesViewControllerTests` and `SuperHeroViewControllerTests`
 
 ## Extra Tasks
 
