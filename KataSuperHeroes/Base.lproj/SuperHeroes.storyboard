@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ManifoldCF-Regular.otf">
+            <string>ManifoldCF-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Kata Super Heroes-->
+        <scene sceneID="cW5-II-CMg">
+            <objects>
+                <viewController storyboardIdentifier="SuperHeroesViewController" id="jHO-t5-MUE" customClass="SuperHeroesViewController" customModule="KataSuperHeroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Sk-Hz-gAy"/>
+                        <viewControllerLayoutGuide type="bottom" id="OMP-2f-iB3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1nU-VI-Zdk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="163" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8rJ-ss-dMc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SuperHeroTableViewCellIdentifier" rowHeight="163" id="oeV-Gk-mce" customClass="SuperHeroTableViewCell" customModule="KataSuperHeroes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="163"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oeV-Gk-mce" id="qqq-ei-lKA">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hAL-V2-PGp" userLabel="Photo Image View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="163"/>
+                                                    <color key="backgroundColor" red="0.1333333333" green="0.15686274510000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Avengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-zD-xEt">
+                                                    <rect key="frame" x="8" y="134" width="98" height="19"/>
+                                                    <fontDescription key="fontDescription" name="ManifoldCF-Regular" family="Manifold CF" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="3Ig-Px-Hnl" userLabel="Avengers Badge Image VIew">
+                                                    <rect key="frame" x="520" y="75" width="64" height="72"/>
+                                                    <accessibility key="accessibilityConfiguration">
+                                                        <bool key="isElement" value="YES"/>
+                                                    </accessibility>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hAL-V2-PGp" firstAttribute="centerY" secondItem="qqq-ei-lKA" secondAttribute="centerY" id="7iE-vl-1bn"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="3Ig-Px-Hnl" secondAttribute="bottom" constant="8" id="E2r-h8-cMR"/>
+                                                <constraint firstItem="hAL-V2-PGp" firstAttribute="centerX" secondItem="qqq-ei-lKA" secondAttribute="centerX" id="FmR-AH-r3A"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3Ig-Px-Hnl" secondAttribute="trailing" constant="8" id="NtU-zx-mZy"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="B1c-zD-xEt" secondAttribute="leading" id="Sdp-MZ-2Jm"/>
+                                                <constraint firstItem="hAL-V2-PGp" firstAttribute="height" secondItem="qqq-ei-lKA" secondAttribute="height" id="azX-UP-yMi"/>
+                                                <constraint firstItem="hAL-V2-PGp" firstAttribute="width" secondItem="qqq-ei-lKA" secondAttribute="width" id="nZT-0h-k4j"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="B1c-zD-xEt" secondAttribute="bottom" constant="2" id="vfd-zo-vbe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avengersBadgeImageView" destination="3Ig-Px-Hnl" id="ZbO-Wi-suY"/>
+                                            <outlet property="nameLabel" destination="B1c-zD-xEt" id="xCC-BE-LvB"/>
+                                            <outlet property="photoImageView" destination="hAL-V2-PGp" id="eau-dB-EKm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¯\_(ツ)_/¯" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOF-w6-oKO">
+                                <rect key="frame" x="265" y="290" width="70.5" height="20.5"/>
+                                <accessibility key="accessibilityConfiguration" label="¯\_(ツ)_/¯"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="kOF-w6-oKO" firstAttribute="centerY" secondItem="1nU-VI-Zdk" secondAttribute="centerY" id="1Zh-Rr-nx2"/>
+                            <constraint firstItem="8rJ-ss-dMc" firstAttribute="width" secondItem="1nU-VI-Zdk" secondAttribute="width" id="CaI-7B-qIm"/>
+                            <constraint firstItem="8rJ-ss-dMc" firstAttribute="height" secondItem="1nU-VI-Zdk" secondAttribute="height" id="HKj-ue-SO2"/>
+                            <constraint firstItem="8rJ-ss-dMc" firstAttribute="centerY" secondItem="1nU-VI-Zdk" secondAttribute="centerY" id="UEf-1Q-VfO"/>
+                            <constraint firstItem="kOF-w6-oKO" firstAttribute="centerX" secondItem="1nU-VI-Zdk" secondAttribute="centerX" id="uSz-YE-guA"/>
+                            <constraint firstItem="8rJ-ss-dMc" firstAttribute="centerX" secondItem="1nU-VI-Zdk" secondAttribute="centerX" id="zaH-9D-SpU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Kata Super Heroes" id="wfY-wT-rF3"/>
+                    <connections>
+                        <outlet property="emptyCaseView" destination="kOF-w6-oKO" id="NiL-QQ-7jJ"/>
+                        <outlet property="tableView" destination="8rJ-ss-dMc" id="eng-8H-CFJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gaD-FF-gYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082" y="324"/>
+        </scene>
+        <!--Super Hero Detail View Controller-->
+        <scene sceneID="rZG-eB-oju">
+            <objects>
+                <viewController storyboardIdentifier="SuperHeroDetailViewController" id="Eu0-Db-rwp" customClass="SuperHeroDetailViewController" customModule="KataSuperHeroes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QYG-mz-kqV"/>
+                        <viewControllerLayoutGuide type="bottom" id="FxP-Oy-3N6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AEF-qs-Gl8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bd7-4D-rrH" userLabel="Photo Image View">
+                                <rect key="frame" x="0.0" y="20" width="600" height="163"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="163" id="cI7-ej-w94"/>
+                                </constraints>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cs-Na-XQN" userLabel="Name Label">
+                                <rect key="frame" x="28" y="233" width="544" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-eH-mPl" userLabel="Description Label">
+                                <rect key="frame" x="28" y="261" width="544" height="331"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_avenger_badge" translatesAutoresizingMaskIntoConstraints="NO" id="wb6-lp-hqh" userLabel="Avengers Badge Image VIew">
+                                <rect key="frame" x="528" y="111" width="64" height="72"/>
+                                <accessibility key="accessibilityConfiguration" label="Avengers Badge">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.11764705882352941" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="KvJ-eH-mPl" secondAttribute="trailing" constant="8" id="Cgd-Lm-PnN"/>
+                            <constraint firstItem="Bd7-4D-rrH" firstAttribute="top" secondItem="QYG-mz-kqV" secondAttribute="bottom" id="LoZ-Ax-I8k"/>
+                            <constraint firstItem="KvJ-eH-mPl" firstAttribute="leading" secondItem="AEF-qs-Gl8" secondAttribute="leadingMargin" constant="8" id="OAK-kX-YE8"/>
+                            <constraint firstItem="Bd7-4D-rrH" firstAttribute="width" secondItem="AEF-qs-Gl8" secondAttribute="width" id="R9B-4J-pgU"/>
+                            <constraint firstItem="KvJ-eH-mPl" firstAttribute="top" secondItem="9cs-Na-XQN" secondAttribute="bottom" constant="8" id="VfX-XJ-dSt"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="KvJ-eH-mPl" secondAttribute="bottom" constant="8" id="Vlm-MH-Kjf"/>
+                            <constraint firstItem="wb6-lp-hqh" firstAttribute="bottom" secondItem="Bd7-4D-rrH" secondAttribute="bottom" id="WkC-UO-iro"/>
+                            <constraint firstItem="9cs-Na-XQN" firstAttribute="leading" secondItem="AEF-qs-Gl8" secondAttribute="leadingMargin" constant="8" id="e1S-ar-ThG"/>
+                            <constraint firstItem="wb6-lp-hqh" firstAttribute="trailing" secondItem="Bd7-4D-rrH" secondAttribute="trailing" constant="-8" id="esJ-5m-JmD"/>
+                            <constraint firstItem="9cs-Na-XQN" firstAttribute="top" secondItem="Bd7-4D-rrH" secondAttribute="bottom" constant="50" id="ntQ-Gf-gVa"/>
+                            <constraint firstItem="Bd7-4D-rrH" firstAttribute="centerX" secondItem="AEF-qs-Gl8" secondAttribute="centerX" id="vhw-zG-YoH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9cs-Na-XQN" secondAttribute="trailing" constant="8" id="xgh-x3-Air"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="avengersBadgeImageView" destination="wb6-lp-hqh" id="SAn-dK-Non"/>
+                        <outlet property="descriptionLabel" destination="KvJ-eH-mPl" id="d1p-lB-EV4"/>
+                        <outlet property="photoImageView" destination="Bd7-4D-rrH" id="Lom-0l-S8d"/>
+                        <outlet property="userLabel" destination="9cs-Na-XQN" id="mEj-Uo-YxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jyy-Rc-klh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="324"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="UINavigationController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_avenger_badge" width="64" height="72"/>
+    </resources>
+</document>
