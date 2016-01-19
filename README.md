@@ -1,4 +1,4 @@
-![Karumi logo][karumilogo] KataSuperHeroes for iOS. [![Build Status](https://travis-ci.org/Karumi/KataSuperHeroesIOS.svg?branch=master)](https://travis-ci.org/Karumi/https://travis-ci.com/Karumi/KataSuperHeroesIOS)
+![Karumi logo][karumilogo] KataSuperHeroes for iOS. [![Build Status](https://travis-ci.org/Karumi/KataSuperHeroesIOS.svg?branch=master)](https://travis-ci.org/Karumi/KataSuperHeroesIOS)
 ============================
 
 - We are here to practice UI Testing.
@@ -55,7 +55,7 @@ Our recommendation for this exercise is:
 If you've covered all the application functionality using UI tests try to continue with the following tasks:
 
 * Add a pull to refresh mechanism to ``SuperHeroesViewController`` and test it.
-* Modify ``SuperHeroDetailViewController`` to handle an error case where the name of the super hero used to start this activity does not exist and show a message if this happens.
+* Modify ``SuperHeroDetailViewController`` to handle an error case where the name of the super hero used to start this ViewController does not exist and show a message if this happens.
 * Modify the project to handle connection errors and show a message to indicate something went wrong.
 
 ---
