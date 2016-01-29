@@ -132,5 +132,6 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         let rootViewController = UINavigationController()
         rootViewController.viewControllers = [superHeroesViewController]
         presentViewController(rootViewController)
+        tester().waitForAnimationsToFinish()
     }
 }
