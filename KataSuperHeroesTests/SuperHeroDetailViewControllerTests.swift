@@ -29,8 +29,7 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
 
         openSuperHeroDetailViewController(superHero.name)
 
-        let nameLabel = tester().waitForViewWithAccessibilityLabel("Name: \(superHero.name)") as! UILabel
-        expect(nameLabel.text).to(equal(superHero.name))
+        tester().waitForViewWithAccessibilityLabel("Name: \(superHero.name)")
     }
 
     func testShowsSuperHeroDescription() {
@@ -38,8 +37,7 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
 
         openSuperHeroDetailViewController(superHero.name)
 
-        let nameLabel = tester().waitForViewWithAccessibilityLabel("Description: \(superHero.name)") as! UILabel
-        expect(nameLabel.text).to(equal(superHero.description))
+        tester().waitForViewWithAccessibilityLabel("Description: \(superHero.name)")
     }
 
     func testDoesNotShowAvengersBadgeIfTheHeroIsNotPartOfTheAvengersTeam() {
@@ -83,5 +81,6 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
         let rootViewController = UINavigationController()
         rootViewController.viewControllers = [superHeroDetailViewController]
         presentViewController(rootViewController)
+        tester().waitForAnimationsToFinish()
     }
 }

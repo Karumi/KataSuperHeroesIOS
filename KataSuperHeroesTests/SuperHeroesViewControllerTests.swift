@@ -21,9 +21,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
 
         openSuperHeroesViewController()
 
-        let emptyCaseText = tester().waitForViewWithAccessibilityLabel("¯\\_(ツ)_/¯")
-            as! UILabel
-        expect(emptyCaseText.text).to(equal("¯\\_(ツ)_/¯"))
+        tester().waitForViewWithAccessibilityLabel("¯\\_(ツ)_/¯")
     }
 
     func testShowsSuperHeroNamesIfThereAreSuperHeroes() {
@@ -47,8 +45,6 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         for i in 0..<superHeroes.count {
             let avengersBadge = tester()
                 .waitForViewWithAccessibilityLabel("\(superHeroes[i].name) - Avengers Badge")
-
-            expect(avengersBadge.hidden).to(beFalse())
         }
     }
 
@@ -60,8 +56,6 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         for i in 0..<superHeroes.count {
             let superHeroCell = tester().waitForViewWithAccessibilityLabel(superHeroes[i].name)
                 as! SuperHeroTableViewCell
-
-            expect(superHeroCell.avengersBadgeImageView.hidden).to(beTrue())
         }
     }
 
