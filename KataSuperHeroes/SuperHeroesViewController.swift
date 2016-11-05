@@ -10,6 +10,11 @@ import UIKit
 import BothamUI
 
 class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewController, SuperHeroesUI {
+    /*
+    internal func showItems(items: [SuperHero]) {
+        <#code#>
+    }
+    */
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyCaseView: UILabel!
@@ -28,14 +33,14 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
     }
 
     func showEmptyCase() {
-        emptyCaseView.hidden = false
+        emptyCaseView.isHidden = false
     }
 
-    func openSuperHeroDetailScreen(superHeroDetailViewController: UIViewController) {
-        navigationController?.push(superHeroDetailViewController)
+    func openSuperHeroDetailScreen(_ superHeroDetailViewController: UIViewController) {
+        navigationController?.push(viewController: superHeroDetailViewController)
     }
 
-    private func configureNavigationBarBackButton() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+    fileprivate func configureNavigationBarBackButton() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
 }

@@ -11,9 +11,9 @@ import BothamUI
 
 class SuperHeroDetailPresenter: BothamPresenter {
 
-    private weak var ui: SuperHeroDetailUI?
-    private let superHeroName: String
-    private let getSuperHeroByName: GetSuperHeroByName
+    fileprivate weak var ui: SuperHeroDetailUI?
+    fileprivate let superHeroName: String
+    fileprivate let getSuperHeroByName: GetSuperHeroByName
 
     init(ui: SuperHeroDetailUI, superHeroName: String, getSuperHeroByName: GetSuperHeroByName) {
         self.ui = ui
@@ -35,6 +35,6 @@ class SuperHeroDetailPresenter: BothamPresenter {
 protocol SuperHeroDetailUI: BothamUI, BothamLoadingUI {
 
     var title: String? {get set}
-    func showSuperHero(superHero: SuperHero?)
+    func showSuperHero(_ superHero: SuperHero?)
 
 }

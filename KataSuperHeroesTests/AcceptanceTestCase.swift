@@ -11,14 +11,14 @@ import KIF
 
 class AcceptanceTestCase: KIFTestCase {
 
-    private var originalRootViewController: UIViewController?
-    private var rootViewController: UIViewController? {
+    fileprivate var originalRootViewController: UIViewController?
+    fileprivate var rootViewController: UIViewController? {
         get {
-            return UIApplication.sharedApplication().keyWindow?.rootViewController
+            return UIApplication.shared.keyWindow?.rootViewController
         }
 
         set(newRootViewController) {
-            UIApplication.sharedApplication().keyWindow?.rootViewController = newRootViewController
+            UIApplication.shared.keyWindow?.rootViewController = newRootViewController
         }
     }
 
@@ -29,7 +29,7 @@ class AcceptanceTestCase: KIFTestCase {
         }
     }
 
-    func presentViewController(viewController: UIViewController) {
+    func presentViewController(_ viewController: UIViewController) {
         originalRootViewController = rootViewController
         rootViewController = viewController
     }

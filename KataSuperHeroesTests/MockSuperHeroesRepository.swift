@@ -13,11 +13,11 @@ class MockSuperHeroesRepository: SuperHeroesRepository {
 
     var superHeroes = [SuperHero]()
 
-    override func getAll(completion: ([SuperHero]) -> ()) {
+    override func getAll(_ completion: ([SuperHero]) -> ()) {
         completion(superHeroes)
     }
 
-    override func getSuperHeroeByName(name: String, completion: (SuperHero?) -> ()) {
+    override func getSuperHeroeByName(_ name: String, completion: (SuperHero?) -> ()) {
         let superHeroByName = superHeroes.filter { $0.name == name }.first
         completion(superHeroByName)
     }

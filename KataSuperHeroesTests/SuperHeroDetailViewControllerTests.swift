@@ -14,7 +14,7 @@ import UIKit
 
 class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
 
-    private let repository = MockSuperHeroesRepository()
+    fileprivate let repository = MockSuperHeroesRepository()
 
     func testShowsSuperHeroNameAsTitle() {
         let superHero = givenASuperHeroWithName()
@@ -45,7 +45,7 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
 
         openSuperHeroDetailViewController(superHero.name)
 
-        tester().waitForAbsenceOfViewWithAccessibilityLabel("Avengers Badge")
+        tester().waitForAbsenceOfView(withAccessibilityLabel: "Avengers Badge")
     }
 
     func testShowsAvengersBadgeIfTheSuperHeroIsPartOfTheAvengersTeam() {
@@ -53,7 +53,7 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
 
         openSuperHeroDetailViewController(superHero.name)
 
-        tester().waitForViewWithAccessibilityLabel("Avengers Badge")
+        tester().waitForView(withAccessibilityLabel: "Avengers Badge")
     }
 
     func testDoesNotShowLoadingViewOnceSuperHeroHasBeenLoaded() {
@@ -61,18 +61,18 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
 
         openSuperHeroDetailViewController(superHero.name)
 
-        tester().waitForAbsenceOfViewWithAccessibilityLabel("LoadingView")
+        tester().waitForAbsenceOfView(withAccessibilityLabel: "LoadingView")
     }
 
-    private func givenASuperHeroWithName(isAvenger: Bool = false) -> SuperHero {
+    fileprivate func givenASuperHeroWithName(_ isAvenger: Bool = false) -> SuperHero {
         let superHero = SuperHero(name: "Mr. Clean",
-            photo: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/60/55b6a28ef24fa.jpg"),
+            photo: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/60/55b6a28ef24fa.jpg"),
             isAvenger: isAvenger, description: "Description")
         repository.superHeroes = [superHero]
         return superHero
     }
 
-    private func openSuperHeroDetailViewController(superHeroName: String) {
+    fileprivate func openSuperHeroDetailViewController(_ superHeroName: String) {
         let superHeroDetailViewController = ServiceLocator()
             .provideSuperHeroDetailViewController(superHeroName) as! SuperHeroDetailViewController
         superHeroDetailViewController.presenter = SuperHeroDetailPresenter(ui: superHeroDetailViewController,
