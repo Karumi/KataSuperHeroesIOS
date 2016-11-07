@@ -43,7 +43,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
-            let avengersBadge = tester()
+            _ = tester()
                 .waitForView(withAccessibilityLabel: "\(superHeroes[i].name) - Avengers Badge")
         }
     }
@@ -54,13 +54,13 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
-            let superHeroCell = tester().waitForView(withAccessibilityLabel: superHeroes[i].name)
+            _ = tester().waitForView(withAccessibilityLabel: superHeroes[i].name)
                 as! SuperHeroTableViewCell
         }
     }
 
     func testDoNotShowEmptyCaseIfThereAreSuperHeroes() {
-        givenThereAreSomeSuperHeroes()
+        _ = givenThereAreSomeSuperHeroes()
 
         openSuperHeroesViewController()
 
@@ -68,7 +68,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
     }
 
     func testDoNotShowLoadingViewIfThereAreSomeSuperHeroes() {
-        givenThereAreSomeSuperHeroes()
+        _ = givenThereAreSomeSuperHeroes()
 
         openSuperHeroesViewController()
 
@@ -102,7 +102,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
     }
 
     fileprivate func givenThereAreNoSuperHeroes() {
-        givenThereAreSomeSuperHeroes(0)
+        _ = givenThereAreSomeSuperHeroes(0)
     }
 
     fileprivate func givenThereAreSomeSuperHeroes(_ numberOfSuperHeroes: Int = 10,
