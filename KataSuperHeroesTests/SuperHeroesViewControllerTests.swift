@@ -30,7 +30,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
-            let superHeroCell = tester().waitForViewWithAccessibilityLabel(superHeroes[i].name)
+            let superHeroCell = tester().waitForView(withAccessibilityLabel: superHeroes[i].name)
                 as! SuperHeroTableViewCell
 
             expect(superHeroCell.nameLabel.text).to(equal(superHeroes[i].name))
@@ -44,7 +44,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
 
         for i in 0..<superHeroes.count {
             let avengersBadge = tester()
-                .waitForViewWithAccessibilityLabel("\(superHeroes[i].name) - Avengers Badge")
+                .waitForView(withAccessibilityLabel: "\(superHeroes[i].name) - Avengers Badge")
         }
     }
 
@@ -54,7 +54,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
-            let superHeroCell = tester().waitForViewWithAccessibilityLabel(superHeroes[i].name)
+            let superHeroCell = tester().waitForView(withAccessibilityLabel: superHeroes[i].name)
                 as! SuperHeroTableViewCell
         }
     }
@@ -81,7 +81,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         openSuperHeroesViewController()
 
         let tableView = tester().waitForView(withAccessibilityLabel: "SuperHeroesTableView") as! UITableView
-        expect(tableView.numberOfRowsInSection(0)).to(equal(superHeroes.count))
+        expect(tableView.numberOfRows(inSection: 0)).to(equal(superHeroes.count))
     }
 
     func testOpensSuperHeroDetailViewControllerOnSuperHeroTapped() {
@@ -90,11 +90,11 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         let superHero = superHeroes[superHeroIndex]
         openSuperHeroesViewController()
 
-        tester().waitForViewWithAccessibilityLabel(superHero.name)
+        tester().waitForView(withAccessibilityLabel: superHero.name)
         tester().tapRow(at: IndexPath(row: superHeroIndex, section: 0),
             inTableViewWithAccessibilityIdentifier: "SuperHeroesTableView")
 
-        tester().waitForViewWithAccessibilityLabel(superHero.name)
+        tester().waitForView(withAccessibilityLabel: superHero.name)
     }
 
     fileprivate func givenThereAreSomeAvengers() -> [SuperHero] {
@@ -110,7 +110,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         var superHeroes = [SuperHero]()
         for i in 0..<numberOfSuperHeroes {
             let superHero = SuperHero(name: "SuperHero - \(i)",
-                photo: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/60/55b6a28ef24fa.jpg"),
+                photo: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/60/55b6a28ef24fa.jpg") as URL?,
                 isAvenger: avengers, description: "Description - \(i)")
             superHeroes.append(superHero)
         }

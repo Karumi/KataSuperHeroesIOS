@@ -21,7 +21,7 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
 
         openSuperHeroDetailViewController(superHero.name)
 
-        tester().waitForViewWithAccessibilityLabel(superHero.name)
+        tester().waitForView(withAccessibilityLabel: superHero.name)
     }
 
     func testShowsSuperHeroName() {
@@ -29,7 +29,7 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
 
         openSuperHeroDetailViewController(superHero.name)
 
-        tester().waitForViewWithAccessibilityLabel("Name: \(superHero.name)")
+        tester().waitForView(withAccessibilityLabel: "Name: \(superHero.name)")
     }
 
     func testShowsSuperHeroDescription() {
@@ -37,7 +37,7 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
 
         openSuperHeroDetailViewController(superHero.name)
 
-        tester().waitForViewWithAccessibilityLabel("Description: \(superHero.name)")
+        tester().waitForView(withAccessibilityLabel: "Description: \(superHero.name)")
     }
 
     func testDoesNotShowAvengersBadgeIfTheHeroIsNotPartOfTheAvengersTeam() {
