@@ -11,7 +11,7 @@ import Foundation
 struct SuperHero {
 
     let name: String
-    let photo: NSURL?
+    let photo: URL?
     let isAvenger: Bool
     let description: String
 

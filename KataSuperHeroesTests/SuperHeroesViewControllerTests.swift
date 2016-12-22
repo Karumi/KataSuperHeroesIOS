@@ -14,14 +14,14 @@ import UIKit
 
 class SuperHeroesViewControllerTests: AcceptanceTestCase {
 
-    private let repository = MockSuperHeroesRepository()
+    fileprivate let repository = MockSuperHeroesRepository()
 
     func testShowsEmptyCaseIfThereAreNoSuperHeroes() {
         givenThereAreNoSuperHeroes()
 
         openSuperHeroesViewController()
 
-        tester().waitForViewWithAccessibilityLabel("¯\\_(ツ)_/¯")
+        tester().waitForView(withAccessibilityLabel: "¯\\_(ツ)_/¯")
     }
 
     func testShowsSuperHeroNamesIfThereAreSuperHeroes() {
@@ -30,7 +30,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
-            let superHeroCell = tester().waitForViewWithAccessibilityLabel(superHeroes[i].name)
+            let superHeroCell = tester().waitForView(withAccessibilityLabel: superHeroes[i].name)
                 as! SuperHeroTableViewCell
 
             expect(superHeroCell.nameLabel.text).to(equal(superHeroes[i].name))
@@ -43,8 +43,8 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
-            let avengersBadge = tester()
-                .waitForViewWithAccessibilityLabel("\(superHeroes[i].name) - Avengers Badge")
+            _ = tester()
+                .waitForView(withAccessibilityLabel: "\(superHeroes[i].name) - Avengers Badge")
         }
     }
 
@@ -54,25 +54,25 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
-            let superHeroCell = tester().waitForViewWithAccessibilityLabel(superHeroes[i].name)
+            _ = tester().waitForView(withAccessibilityLabel: superHeroes[i].name)
                 as! SuperHeroTableViewCell
         }
     }
 
     func testDoNotShowEmptyCaseIfThereAreSuperHeroes() {
-        givenThereAreSomeSuperHeroes()
+        _ = givenThereAreSomeSuperHeroes()
 
         openSuperHeroesViewController()
 
-        tester().waitForAbsenceOfViewWithAccessibilityLabel("¯\\_(ツ)_/¯")
+        tester().waitForAbsenceOfView(withAccessibilityLabel: "¯\\_(ツ)_/¯")
     }
 
     func testDoNotShowLoadingViewIfThereAreSomeSuperHeroes() {
-        givenThereAreSomeSuperHeroes()
+        _ = givenThereAreSomeSuperHeroes()
 
         openSuperHeroesViewController()
 
-        tester().waitForAbsenceOfViewWithAccessibilityLabel("LoadingView")
+        tester().waitForAbsenceOfView(withAccessibilityLabel: "LoadingView")
     }
 
     func testShowsTheExactNumberOfSuperHeroes() {
@@ -80,8 +80,8 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
 
         openSuperHeroesViewController()
 
-        let tableView = tester().waitForViewWithAccessibilityLabel("SuperHeroesTableView") as! UITableView
-        expect(tableView.numberOfRowsInSection(0)).to(equal(superHeroes.count))
+        let tableView = tester().waitForView(withAccessibilityLabel: "SuperHeroesTableView") as! UITableView
+        expect(tableView.numberOfRows(inSection: 0)).to(equal(superHeroes.count))
     }
 
     func testOpensSuperHeroDetailViewControllerOnSuperHeroTapped() {
@@ -90,27 +90,27 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         let superHero = superHeroes[superHeroIndex]
         openSuperHeroesViewController()
 
-        tester().waitForViewWithAccessibilityLabel(superHero.name)
-        tester().tapRowAtIndexPath(NSIndexPath(forRow: superHeroIndex, inSection: 0),
+        tester().waitForView(withAccessibilityLabel: superHero.name)
+        tester().tapRow(at: IndexPath(row: superHeroIndex, section: 0),
             inTableViewWithAccessibilityIdentifier: "SuperHeroesTableView")
 
-        tester().waitForViewWithAccessibilityLabel(superHero.name)
+        tester().waitForView(withAccessibilityLabel: superHero.name)
     }
 
-    private func givenThereAreSomeAvengers() -> [SuperHero] {
+    fileprivate func givenThereAreSomeAvengers() -> [SuperHero] {
         return givenThereAreSomeSuperHeroes(avengers: true)
     }
 
-    private func givenThereAreNoSuperHeroes() {
-        givenThereAreSomeSuperHeroes(0)
+    fileprivate func givenThereAreNoSuperHeroes() {
+        _ = givenThereAreSomeSuperHeroes(0)
     }
 
-    private func givenThereAreSomeSuperHeroes(numberOfSuperHeroes: Int = 10,
+    fileprivate func givenThereAreSomeSuperHeroes(_ numberOfSuperHeroes: Int = 10,
         avengers: Bool = false) -> [SuperHero] {
         var superHeroes = [SuperHero]()
         for i in 0..<numberOfSuperHeroes {
             let superHero = SuperHero(name: "SuperHero - \(i)",
-                photo: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/60/55b6a28ef24fa.jpg"),
+                photo: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/60/55b6a28ef24fa.jpg") as URL?,
                 isAvenger: avengers, description: "Description - \(i)")
             superHeroes.append(superHero)
         }
@@ -118,14 +118,14 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         return superHeroes
     }
 
-    private func openSuperHeroesViewController() {
+    fileprivate func openSuperHeroesViewController() {
         let superHeroesViewController = ServiceLocator()
             .provideSuperHeroesViewController() as! SuperHeroesViewController
         superHeroesViewController.presenter = SuperHeroesPresenter(ui: superHeroesViewController,
                 getSuperHeroes: GetSuperHeroes(repository: repository))
         let rootViewController = UINavigationController()
         rootViewController.viewControllers = [superHeroesViewController]
-        presentViewController(rootViewController)
+        present(viewController: rootViewController)
         tester().waitForAnimationsToFinish()
     }
 }

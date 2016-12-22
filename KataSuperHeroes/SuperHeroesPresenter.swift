@@ -11,8 +11,8 @@ import BothamUI
 
 class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
 
-    private weak var ui: SuperHeroesUI?
-    private let getSuperHeroes: GetSuperHeroes
+    fileprivate weak var ui: SuperHeroesUI?
+    fileprivate let getSuperHeroes: GetSuperHeroes
 
     init(ui: SuperHeroesUI, getSuperHeroes: GetSuperHeroes) {
         self.ui = ui
@@ -26,12 +26,12 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
             if superHeroes.isEmpty {
                 self.ui?.showEmptyCase()
             } else {
-                self.ui?.showItems(superHeroes)
+                self.ui?.show(items: superHeroes)
             }
         }
     }
 
-    func itemWasTapped(item: SuperHero) {
+    func itemWasTapped(_ item: SuperHero) {
         let superHeroDetailViewController = ServiceLocator().provideSuperHeroDetailViewController(item.name)
         ui?.openSuperHeroDetailScreen(superHeroDetailViewController)
     }
@@ -40,7 +40,7 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
 protocol SuperHeroesUI: BothamUI, BothamLoadingUI {
 
     func showEmptyCase()
-    func showItems(items: [SuperHero])
-    func openSuperHeroDetailScreen(superHeroDetailViewController: UIViewController)
+    func show(items: [SuperHero])
+    func openSuperHeroDetailScreen(_ superHeroDetailViewController: UIViewController)
 
 }

@@ -10,14 +10,14 @@ import Foundation
 
 class GetSuperHeroByName {
 
-    private let repository: SuperHeroesRepository
+    fileprivate let repository: SuperHeroesRepository
 
     init(repository: SuperHeroesRepository) {
         self.repository = repository
     }
 
-    func execute(superHeroName: String, completion: (SuperHero?) -> () ) {
-        repository.getSuperHeroeByName(superHeroName) { superHero in
+    func execute(_ superHeroName: String, completion: @escaping (SuperHero?) -> () ) {
+        repository.getSuperHero(withName: superHeroName) { superHero in
             completion(superHero)
         }
     }

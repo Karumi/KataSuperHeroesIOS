@@ -17,24 +17,25 @@ class SuperHeroTableViewCell: UITableViewCell, BothamViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avengersBadgeImageView: UIImageView!
 
-    func configureForItem(item: SuperHero) {
+    func configure(forItem item: SuperHero) {
         nameLabel.text = item.name
-        photoImageView.sd_setImageWithURL(item.photo)
-        avengersBadgeImageView.hidden = !item.isAvenger
+        photoImageView.sd_setImage(with: item.photo as URL!)
+        avengersBadgeImageView.isHidden = !item.isAvenger
         avengersBadgeImageView.accessibilityLabel = "\(item.name) - Avengers Badge"
+        accessibilityLabel = item.name
         applyImageGradient(photoImageView)
     }
 
-    private func applyImageGradient(thumbnailImage: UIImageView) {
+    fileprivate func applyImageGradient(_ thumbnailImage: UIImageView) {
         guard thumbnailImage.layer.sublayers == nil else {
             return
         }
         let gradient: CAGradientLayer = CAGradientLayer(layer: thumbnailImage.layer)
         gradient.frame = thumbnailImage.bounds
-        gradient.colors = [UIColor.gradientStartColor.CGColor, UIColor.gradientEndColor.CGColor]
-        gradient.startPoint = CGPointMake(0.0, 0.6)
-        gradient.endPoint = CGPointMake(0.0, 1.0)
-        thumbnailImage.layer.insertSublayer(gradient, atIndex: 0)
+        gradient.colors = [UIColor.gradientStartColor.cgColor, UIColor.gradientEndColor.cgColor]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.6)
+        gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
+        thumbnailImage.layer.insertSublayer(gradient, at: 0)
     }
 
 }
