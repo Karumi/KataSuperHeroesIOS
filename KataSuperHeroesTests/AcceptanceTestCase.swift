@@ -29,7 +29,7 @@ class AcceptanceTestCase: KIFTestCase {
         }
     }
 
-    func presentViewController(_ viewController: UIViewController) {
+    func present(viewController: UIViewController) {
         originalRootViewController = rootViewController
         rootViewController = viewController
     }

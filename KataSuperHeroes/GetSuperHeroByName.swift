@@ -17,7 +17,7 @@ class GetSuperHeroByName {
     }
 
     func execute(_ superHeroName: String, completion: @escaping (SuperHero?) -> () ) {
-        repository.getSuperHeroeByName(superHeroName) { superHero in
+        repository.getSuperHero(withName: superHeroName) { superHero in
             completion(superHero)
         }
     }

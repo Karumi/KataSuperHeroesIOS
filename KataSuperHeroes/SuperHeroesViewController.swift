@@ -10,11 +10,6 @@ import UIKit
 import BothamUI
 
 class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewController, SuperHeroesUI {
-    /*
-    internal func showItems(items: [SuperHero]) {
-        <#code#>
-    }
-    */
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyCaseView: UILabel!

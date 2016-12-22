@@ -80,7 +80,7 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
             getSuperHeroByName: GetSuperHeroByName(repository: repository))
         let rootViewController = UINavigationController()
         rootViewController.viewControllers = [superHeroDetailViewController]
-        presentViewController(rootViewController)
+        present(viewController: rootViewController)
         tester().waitForAnimationsToFinish()
     }
 }

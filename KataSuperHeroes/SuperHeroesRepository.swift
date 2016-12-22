@@ -109,7 +109,7 @@ class SuperHeroesRepository {
         }
     }
 
-    func getSuperHeroeByName(_ name: String, completion: @escaping (SuperHero?) -> ()) {
+    func getSuperHero(withName name: String, completion: @escaping (SuperHero?) -> ()) {
         delay(1.5) {
             let superHeroByName = self.superHeroes.filter { $0.name == name }.first
             completion(superHeroByName)

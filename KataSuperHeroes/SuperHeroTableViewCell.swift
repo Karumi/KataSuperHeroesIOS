@@ -22,6 +22,7 @@ class SuperHeroTableViewCell: UITableViewCell, BothamViewCell {
         photoImageView.sd_setImage(with: item.photo as URL!)
         avengersBadgeImageView.isHidden = !item.isAvenger
         avengersBadgeImageView.accessibilityLabel = "\(item.name) - Avengers Badge"
+        accessibilityLabel = item.name
         applyImageGradient(photoImageView)
     }
 

@@ -26,7 +26,7 @@ class SuperHeroDetailPresenter: BothamPresenter {
         ui?.showLoader()
         getSuperHeroByName.execute(superHeroName) { superHero in
             self.ui?.hideLoader()
-            self.ui?.showSuperHero(superHero)
+            self.ui?.show(superHero: superHero)
         }
     }
 
@@ -35,6 +35,6 @@ class SuperHeroDetailPresenter: BothamPresenter {
 protocol SuperHeroDetailUI: BothamUI, BothamLoadingUI {
 
     var title: String? {get set}
-    func showSuperHero(_ superHero: SuperHero?)
+    func show(superHero: SuperHero?)
 
 }
