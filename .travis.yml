@@ -1,11 +1,9 @@
 language: objective-c
-osx_image: xcode7.3
-cache: cocoapods
+osx_image: xcode8
 
 before_install:
-  - brew install swiftlint
+  - pod repo update --silent
   - gem install xcpretty
-  - gem install cocoapods
 
 install:
   - pod install
