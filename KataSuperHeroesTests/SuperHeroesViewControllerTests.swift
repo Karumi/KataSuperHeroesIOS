@@ -14,26 +14,26 @@ import UIKit
 
 class SuperHeroesViewControllerTests: AcceptanceTestCase {
 
-    private let repository = MockSuperHeroesRepository()
+    fileprivate let repository = MockSuperHeroesRepository()
 
     func testShowsEmptyCaseIfThereAreNoSuperHeroes() {
         givenThereAreNoSuperHeroes()
 
         openSuperHeroesViewController()
 
-        tester().waitForViewWithAccessibilityLabel("¯\\_(ツ)_/¯")
+        tester().waitForView(withAccessibilityLabel: "¯\\_(ツ)_/¯")
     }
 
-    private func givenThereAreNoSuperHeroes() {
-        givenThereAreSomeSuperHeroes(0)
+    fileprivate func givenThereAreNoSuperHeroes() {
+        _ = givenThereAreSomeSuperHeroes(0)
     }
 
-    private func givenThereAreSomeSuperHeroes(numberOfSuperHeroes: Int = 10,
+    fileprivate func givenThereAreSomeSuperHeroes(_ numberOfSuperHeroes: Int = 10,
         avengers: Bool = false) -> [SuperHero] {
         var superHeroes = [SuperHero]()
         for i in 0..<numberOfSuperHeroes {
             let superHero = SuperHero(name: "SuperHero - \(i)",
-                photo: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/60/55b6a28ef24fa.jpg"),
+                photo: NSURL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/60/55b6a28ef24fa.jpg") as URL?,
                 isAvenger: avengers, description: "Description - \(i)")
             superHeroes.append(superHero)
         }
@@ -41,14 +41,14 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         return superHeroes
     }
 
-    private func openSuperHeroesViewController() {
+    fileprivate func openSuperHeroesViewController() {
         let superHeroesViewController = ServiceLocator()
             .provideSuperHeroesViewController() as! SuperHeroesViewController
         superHeroesViewController.presenter = SuperHeroesPresenter(ui: superHeroesViewController,
                 getSuperHeroes: GetSuperHeroes(repository: repository))
         let rootViewController = UINavigationController()
         rootViewController.viewControllers = [superHeroesViewController]
-        presentViewController(rootViewController)
+        present(viewController: rootViewController)
         tester().waitForAnimationsToFinish()
     }
 }

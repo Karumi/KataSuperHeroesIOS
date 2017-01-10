@@ -30,33 +30,33 @@ class ServiceLocator {
         return superHeroesViewController
     }
 
-    func provideSuperHeroDetailViewController(superHeroName: String) -> UIViewController {
+    func provideSuperHeroDetailViewController(_ superHeroName: String) -> UIViewController {
         let viewController: SuperHeroDetailViewController =
         storyBoard.instantiateViewController("SuperHeroDetailViewController")
         viewController.presenter = provideSuperHeroDetailPresenter(viewController, superHeroName: superHeroName)
         return viewController
     }
 
-    private func provideSuperHeroDetailPresenter(ui: SuperHeroDetailUI,
+    fileprivate func provideSuperHeroDetailPresenter(_ ui: SuperHeroDetailUI,
         superHeroName: String) -> SuperHeroDetailPresenter {
         let getSuperHeroByName = GetSuperHeroByName(repository: SuperHeroesRepository())
         return SuperHeroDetailPresenter(ui: ui, superHeroName: superHeroName, getSuperHeroByName: getSuperHeroByName)
     }
 
-    private func provideSuperHeroesDataSource() -> BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell> {
+    fileprivate func provideSuperHeroesDataSource() -> BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell> {
         return BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell>()
     }
 
-    private func provideSuperHeroesPresenter(ui: SuperHeroesUI) -> SuperHeroesPresenter {
+    fileprivate func provideSuperHeroesPresenter(_ ui: SuperHeroesUI) -> SuperHeroesPresenter {
         let getSuperHeroes = provideGetSuperHeroesUseCase()
         return SuperHeroesPresenter(ui: ui, getSuperHeroes: getSuperHeroes)
     }
 
-    private func provideGetSuperHeroesUseCase() -> GetSuperHeroes {
+    fileprivate func provideGetSuperHeroesUseCase() -> GetSuperHeroes {
         return GetSuperHeroes(repository: SuperHeroesRepository())
     }
 
-    private lazy var storyBoard: BothamStoryboard = {
+    fileprivate lazy var storyBoard: BothamStoryboard = {
         return BothamStoryboard(name: "SuperHeroes")
     }()
 

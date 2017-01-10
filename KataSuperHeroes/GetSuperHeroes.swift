@@ -10,13 +10,13 @@ import Foundation
 
 class GetSuperHeroes {
 
-    private let repository: SuperHeroesRepository
+    fileprivate let repository: SuperHeroesRepository
 
     init(repository: SuperHeroesRepository) {
         self.repository = repository
     }
 
-    func execute(completion: ([SuperHero]) -> ()) {
+    func execute(_ completion: @escaping ([SuperHero]) -> ()) {
         repository.getAll() { superHeroes in
             completion(superHeroes)
         }
