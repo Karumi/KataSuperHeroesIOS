@@ -38,8 +38,11 @@ Our recommendation for this exercise is:
   * Before starting
     1. Fork this repository.
     2. Checkout `kata-super-heroes` branch.
-    3. Execute the application, explore it manually and make yourself familiar with the code.
-    4. Execute `SuperHeroesViewControllerTests` and watch the only test it contains pass.
+    3. Run `pod repo update` 
+    4. Run `pod install`
+    5. Open `KataSuperHeroes.xcworkspace`
+    5. Execute the application, explore it manually and make yourself familiar with the code.
+    6. Execute `SuperHeroesViewControllerTests` and watch the only test it contains pass.
 
   * To help you get started, these are some test cases for `SuperHeroesViewControllerTests`:     
     1. Setup mocked `SuperHeroesRepository` in `SuperHeroesViewControllerTests` to return a list of some Super Heroes.
