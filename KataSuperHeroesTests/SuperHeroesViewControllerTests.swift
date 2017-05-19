@@ -54,8 +54,8 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
-            _ = tester().waitForView(withAccessibilityLabel: superHeroes[i].name)
-                as! SuperHeroTableViewCell
+            _ = tester()
+                .waitForAbsenceOfView(withAccessibilityLabel: "\(superHeroes[i].name) - Avengers Badge")
         }
     }
 
