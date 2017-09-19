@@ -1,25 +1,35 @@
 PODS:
   - BothamUI (2.0.0)
-  - KIF (3.5.1):
-    - KIF/Core (= 3.5.1)
-  - KIF/Core (3.5.1)
-  - Nimble (5.1.1)
+  - KIF (3.6.0):
+    - KIF/Core (= 3.6.0)
+  - KIF/Core (3.6.0)
+  - Nimble (7.0.1)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
 
 DEPENDENCIES:
   - BothamUI (~> 2.0)
-  - KIF (~> 3.0)
-  - Nimble (~> 5.0)
+  - KIF (~> 3.6.0)
+  - Nimble (from `https://github.com/Quick/Nimble.git`, branch `master`)
   - SDWebImage
+
+EXTERNAL SOURCES:
+  Nimble:
+    :branch: master
+    :git: https://github.com/Quick/Nimble.git
+
+CHECKOUT OPTIONS:
+  Nimble:
+    :commit: a63252b16eba6cdebec4e4936388c90552165a68
+    :git: https://github.com/Quick/Nimble.git
 
 SPEC CHECKSUMS:
   BothamUI: 5d1073124d4b14e32868a3eeb37509f1e8a73638
-  KIF: 082eb65279e51c3092923802849eb796a04982ab
-  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
+  KIF: bd770edd8ce49bc7308501e4871e58a02d137be3
+  Nimble: 1b6670c36e5750169b9e4cc2e9cfa82a7603c69e
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
 
-PODFILE CHECKSUM: 860825b33731750150773a486d3a99f065907e55
+PODFILE CHECKSUM: 768496574429ff238267e70199878e8f7305033c
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.3.1
