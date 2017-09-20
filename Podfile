@@ -7,7 +7,7 @@ target 'KataSuperHeroes' do
 end
 
 target 'KataSuperHeroesTests' do
-    pod 'Nimble', '~> 5.0'
-    pod 'KIF', '~> 3.0', :configurations => ['Debug']
+    pod "Nimble", :git => "https://github.com/Quick/Nimble.git", :branch => "master"
+    pod 'KIF', '~> 3.6.0', :configurations => ['Debug']
 end
 
