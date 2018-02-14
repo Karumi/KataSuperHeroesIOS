@@ -1,4 +1,4 @@
-![Karumi logo][karumilogo] KataSuperHeroes for iOS. [![Build Status](https://travis-ci.org/Karumi/KataSuperHeroesIOS.svg?branch=master)](https://travis-ci.org/Karumi/KataSuperHeroesIOS)
+![Karumi logo][karumilogo] KataSuperHeroes for iOS.
 ============================
 
 - We are here to practice UI Testing.
