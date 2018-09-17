@@ -41,7 +41,8 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         return superHeroes
     }
 
-    fileprivate func openSuperHeroesViewController() {
+    @discardableResult
+    fileprivate func openSuperHeroesViewController() -> SuperHeroesViewController {
         let superHeroesViewController = ServiceLocator()
             .provideSuperHeroesViewController() as! SuperHeroesViewController
         superHeroesViewController.presenter = SuperHeroesPresenter(ui: superHeroesViewController,
@@ -50,5 +51,6 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         rootViewController.viewControllers = [superHeroesViewController]
         present(viewController: rootViewController)
         tester().waitForAnimationsToFinish()
+        return superHeroesViewController
     }
 }
