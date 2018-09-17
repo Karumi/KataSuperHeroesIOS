@@ -27,11 +27,11 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
     func testShowsSuperHeroNamesIfThereAreSuperHeroes() {
         let superHeroes = givenThereAreSomeSuperHeroes()
 
-        openSuperHeroesViewController()
+        let viewController = openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
-            let superHeroCell = tester().waitForView(withAccessibilityLabel: superHeroes[i].name)
-                as! SuperHeroTableViewCell
+            let superHeroCell = tester().waitForCell(at: IndexPath(row: i, section: 0),
+                                                     in: viewController.tableView) as! SuperHeroTableViewCell
 
             expect(superHeroCell.nameLabel.text).to(equal(superHeroes[i].name))
         }
@@ -40,23 +40,26 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
     func testShowsAvengersBadgeIfASuperHeroIsPartOfTheAvengersTeam() {
         let superHeroes = givenThereAreSomeAvengers()
 
-        openSuperHeroesViewController()
+        let viewController = openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
-            _ = tester()
-                .waitForView(withAccessibilityLabel: "\(superHeroes[i].name) - Avengers Badge")
+            let superHeroCell = tester().waitForCell(at: IndexPath(row: i, section: 0),
+                                                     in: viewController.tableView) as! SuperHeroTableViewCell
+
+            expect(superHeroCell.avengersBadgeImageView.isHidden).to(beFalse())
         }
     }
 
     func testDoNotShowAvengersBadgeIfSuperHeroesAreNotPartOfTheAvengersTeam() {
         let superHeroes = givenThereAreSomeSuperHeroes()
 
-        openSuperHeroesViewController()
-
+        let viewController = openSuperHeroesViewController()
 
         for i in 0..<superHeroes.count {
-            tester()
-                .waitForAbsenceOfView(withAccessibilityLabel: "\(superHeroes[i].name) - Avengers Badge")
+            let superHeroCell = tester().waitForCell(at: IndexPath(row: i, section: 0),
+                                                     in: viewController.tableView) as! SuperHeroTableViewCell
+
+            expect(superHeroCell.avengersBadgeImageView.isHidden).to(beTrue())
         }
     }
 
@@ -119,7 +122,8 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         return superHeroes
     }
 
-    fileprivate func openSuperHeroesViewController() {
+    @discardableResult
+    fileprivate func openSuperHeroesViewController() -> SuperHeroesViewController {
         let superHeroesViewController = ServiceLocator()
             .provideSuperHeroesViewController() as! SuperHeroesViewController
         superHeroesViewController.presenter = SuperHeroesPresenter(ui: superHeroesViewController,
@@ -128,5 +132,6 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         rootViewController.viewControllers = [superHeroesViewController]
         present(viewController: rootViewController)
         tester().waitForAnimationsToFinish()
+        return superHeroesViewController
     }
 }
