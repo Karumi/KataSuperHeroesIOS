@@ -14,13 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-            window = UIWindow(frame:UIScreen.main.bounds)
-            installRootViewControllerIntoWindow(window)
-            configureWindow()
-            configureNavigationBarStyle()
-            window?.makeKeyAndVisible()
-            return true
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        window = UIWindow(frame:UIScreen.main.bounds)
+        installRootViewControllerIntoWindow(window)
+        configureWindow()
+        configureNavigationBarStyle()
+        window?.makeKeyAndVisible()
+        return true
     }
 
     fileprivate func installRootViewControllerIntoWindow(_ window: UIWindow?) {
@@ -37,10 +37,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.barTintColor = UIColor.navigationBarColor
         navigationBarAppearance.tintColor = UIColor.navigationBarTitleColor
         navigationBarAppearance.isTranslucent = false
-        navigationBarAppearance.titleTextAttributes = [
-            NSForegroundColorAttributeName : UIColor.navigationBarTitleColor
-        ]
+        navigationBarAppearance.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([
+            NSAttributedString.Key.foregroundColor.rawValue : UIColor.navigationBarTitleColor
+        ])
     }
 
 }
 
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
