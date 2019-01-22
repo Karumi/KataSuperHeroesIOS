@@ -8,18 +8,20 @@
 
 import Foundation
 import UIKit
-import BothamUI
 import SDWebImage
 
-class SuperHeroTableViewCell: UITableViewCell, BothamViewCell {
+class SuperHeroTableViewCell: UITableViewCell {
 
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avengersBadgeImageView: UIImageView!
 
+    public static var reuseIdentifier: String { return String(describing: SuperHeroTableViewCell.self) + "ReuseIdentifier" }
+    public static var identifier: String { return String(describing: SuperHeroTableViewCell.self) + "Identifier" }
+
     func configure(forItem item: SuperHero) {
         nameLabel.text = item.name
-        photoImageView.sd_setImage(with: item.photo as URL!)
+        photoImageView.sd_setImage(with: item.photo)
         avengersBadgeImageView.isHidden = !item.isAvenger
         avengersBadgeImageView.accessibilityLabel = "\(item.name) - Avengers Badge"
         accessibilityLabel = item.name

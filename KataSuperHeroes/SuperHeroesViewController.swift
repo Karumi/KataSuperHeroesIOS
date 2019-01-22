@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import BothamUI
 
-class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewController, SuperHeroesUI {
+class SuperHeroesViewController: KataSuperHeroesViewController, SuperHeroesUI {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyCaseView: UILabel!
 
-    var dataSource: BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell>!
+    var presenter: SuperHeroesPresenter!
+    var dataSource: SuperHeroesTableDataSource!
     var delegate: UITableViewDelegate!
 
     override func viewDidLoad() {
@@ -25,6 +25,7 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
         tableView.accessibilityIdentifier = "SuperHeroesTableView"
         configureNavigationBarBackButton()
         super.viewDidLoad()
+        presenter.viewDidLoad()
     }
 
     func showEmptyCase() {
@@ -32,7 +33,12 @@ class SuperHeroesViewController: KataSuperHeroesViewController, BothamTableViewC
     }
 
     func openSuperHeroDetailScreen(_ superHeroDetailViewController: UIViewController) {
-        navigationController?.push(viewController: superHeroDetailViewController)
+        navigationController?.pushViewController(superHeroDetailViewController, animated: true)
+    }
+
+    func show(items: [SuperHero]) {
+        dataSource.items = items
+        tableView.reloadData()
     }
 
     fileprivate func configureNavigationBarBackButton() {
