@@ -10,6 +10,5 @@ excluded: # paths to ignore during linting. overridden by `included`.
 # parameterized rules can be customized from this configuration file
 line_length: 120
 # parameterized rules are first parameterized as a warning level, then error level.
-variable_name_min_length:
-  - 1 # warning
-  - 1 # error
+identifier_name:
+    min_length: 1
