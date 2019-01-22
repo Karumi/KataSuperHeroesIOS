@@ -9,29 +9,20 @@ PODS:
 
 DEPENDENCIES:
   - KIF (~> 3.7.4)
-  - Nimble (from `https://github.com/Quick/Nimble.git`, branch `master`)
+  - Nimble (~> 7.3.2)
   - SDWebImage
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - KIF
+    - Nimble
     - SDWebImage
-
-EXTERNAL SOURCES:
-  Nimble:
-    :branch: master
-    :git: https://github.com/Quick/Nimble.git
-
-CHECKOUT OPTIONS:
-  Nimble:
-    :commit: 025d0e25fc043534ae24e645e6729cd15851e28d
-    :git: https://github.com/Quick/Nimble.git
 
 SPEC CHECKSUMS:
   KIF: f3d01c109ee9d1cfe6b0f2bb2aa278e807e971e2
-  Nimble: 5a18f3b2b0b5f649b1b1e5dd3d07afe3be7aec9e
+  Nimble: 5e94a8cacb355943c6c87198035dc4adbb0f10e4
   SDWebImage: c5594f1a19c48d526d321e548902b56b479cd508
 
-PODFILE CHECKSUM: 9052ce86f393184f100e31cc7f463c1377f2320b
+PODFILE CHECKSUM: 6d956b5c48a5b741aa8582a82447ca9f349b1302
 
 COCOAPODS: 1.5.3
