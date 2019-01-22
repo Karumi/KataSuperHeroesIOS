@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2EF423110536FA1BE9F3D026 /* Pods_KataSuperHeroesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52BB6D7EC1A35D967ACA058D /* Pods_KataSuperHeroesTests.framework */; };
+		49538C3521F736970018AAC9 /* SuperHeroesTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49538C3421F736970018AAC9 /* SuperHeroesTableDataSource.swift */; };
+		49538C3821F737B50018AAC9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49538C3721F737B50018AAC9 /* LoadingView.swift */; };
+		49538C3A21F738600018AAC9 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49538C3921F738600018AAC9 /* LoadingView.xib */; };
+		49538C3C21F739110018AAC9 /* SuperHeroesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49538C3B21F739110018AAC9 /* SuperHeroesTableViewDelegate.swift */; };
+		49538C3E21F73A2C0018AAC9 /* KataSuperHeroesStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49538C3D21F73A2C0018AAC9 /* KataSuperHeroesStoryboard.swift */; };
 		EB8705FF1C46508E00B66C19 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8705FE1C46508E00B66C19 /* XCTestCase.swift */; };
 		EB8706011C46510300B66C19 /* KIFTestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706001C46510300B66C19 /* KIFTestActor.swift */; };
 		EB8706031C46513E00B66C19 /* SuperHeroesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8706021C46513E00B66C19 /* SuperHeroesViewControllerTests.swift */; };
@@ -46,6 +51,11 @@
 /* Begin PBXFileReference section */
 		36941A129508D2B6B6D0E88A /* Pods-KataSuperHeroes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataSuperHeroes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KataSuperHeroes/Pods-KataSuperHeroes.debug.xcconfig"; sourceTree = "<group>"; };
 		47D4911AFC6FE996A253C702 /* Pods_KataSuperHeroes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KataSuperHeroes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49538C3421F736970018AAC9 /* SuperHeroesTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroesTableDataSource.swift; sourceTree = "<group>"; };
+		49538C3721F737B50018AAC9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		49538C3921F738600018AAC9 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		49538C3B21F739110018AAC9 /* SuperHeroesTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroesTableViewDelegate.swift; sourceTree = "<group>"; };
+		49538C3D21F73A2C0018AAC9 /* KataSuperHeroesStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KataSuperHeroesStoryboard.swift; sourceTree = "<group>"; };
 		4EA13799764338513A6EC853 /* Pods-KataSuperHeroes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataSuperHeroes.release.xcconfig"; path = "Pods/Target Support Files/Pods-KataSuperHeroes/Pods-KataSuperHeroes.release.xcconfig"; sourceTree = "<group>"; };
 		52BB6D7EC1A35D967ACA058D /* Pods_KataSuperHeroesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KataSuperHeroesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FC32F3D31A7392656DF9EC8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49538C3621F737AD0018AAC9 /* Loading View */ = {
+			isa = PBXGroup;
+			children = (
+				49538C3721F737B50018AAC9 /* LoadingView.swift */,
+				49538C3921F738600018AAC9 /* LoadingView.xib */,
+			);
+			name = "Loading View";
+			sourceTree = "<group>";
+		};
 		516F777E8F08307FC0198642 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +224,7 @@
 		EBDE9B7D1C451C3B00E4B4C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49538C3621F737AD0018AAC9 /* Loading View */,
 				EBDE9B8C1C45448100E4B4C2 /* Table View */,
 				EBC230761C45016A007D5068 /* SuperHeroesViewController.swift */,
 				EBDB2D081C4560D0001FC84B /* SuperHeroDetailViewController.swift */,
@@ -244,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				EBDE9B861C4539B800E4B4C2 /* KataSuperHeroesViewController.swift */,
+				49538C3D21F73A2C0018AAC9 /* KataSuperHeroesStoryboard.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -252,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				EBDE9B8D1C45448F00E4B4C2 /* SuperHeroTableViewCell.swift */,
+				49538C3421F736970018AAC9 /* SuperHeroesTableDataSource.swift */,
+				49538C3B21F739110018AAC9 /* SuperHeroesTableViewDelegate.swift */,
 			);
 			name = "Table View";
 			sourceTree = "<group>";
@@ -354,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBC2307F1C45016A007D5068 /* LaunchScreen.storyboard in Resources */,
+				49538C3A21F738600018AAC9 /* LoadingView.xib in Resources */,
 				EBC2307C1C45016A007D5068 /* Assets.xcassets in Resources */,
 				EBC2307A1C45016A007D5068 /* SuperHeroes.storyboard in Resources */,
 			);
@@ -376,12 +400,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KataSuperHeroes/Pods-KataSuperHeroes-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BothamUI/BothamUI.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BothamUI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49538C3C21F739110018AAC9 /* SuperHeroesTableViewDelegate.swift in Sources */,
 				EBDE9B841C451CE500E4B4C2 /* SuperHeroesPresenter.swift in Sources */,
 				EBDB2D0B1C456129001FC84B /* SuperHeroDetailPresenter.swift in Sources */,
 				EBDE9B8E1C45448F00E4B4C2 /* SuperHeroTableViewCell.swift in Sources */,
@@ -460,9 +483,12 @@
 				EBDE9B871C4539B800E4B4C2 /* KataSuperHeroesViewController.swift in Sources */,
 				EBDB2D091C4560D0001FC84B /* SuperHeroDetailViewController.swift in Sources */,
 				EBDE9B7C1C4519A400E4B4C2 /* UIColor.swift in Sources */,
+				49538C3821F737B50018AAC9 /* LoadingView.swift in Sources */,
 				EBC230751C45016A007D5068 /* AppDelegate.swift in Sources */,
 				EBDB2D0D1C456410001FC84B /* GetSuperHeroByName.swift in Sources */,
+				49538C3521F736970018AAC9 /* SuperHeroesTableDataSource.swift in Sources */,
 				EBDE9B821C451CBB00E4B4C2 /* GetSuperHeroes.swift in Sources */,
+				49538C3E21F73A2C0018AAC9 /* KataSuperHeroesStoryboard.swift in Sources */,
 				EBDE9B791C4518EE00E4B4C2 /* ServiceLocator.swift in Sources */,
 				EBDE9B891C453AEA00E4B4C2 /* SuperHero.swift in Sources */,
 			);

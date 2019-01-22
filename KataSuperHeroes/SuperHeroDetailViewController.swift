@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import BothamUI
 import SDWebImage
 
 class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroDetailUI {
@@ -18,6 +17,13 @@ class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroDet
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+
+    var presenter: SuperHeroDetailPresenter!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.viewDidLoad()
+    }
 
     func show(superHero: SuperHero?) {
         guard let superHero = superHero else {

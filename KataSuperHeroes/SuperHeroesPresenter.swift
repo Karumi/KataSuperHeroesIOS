@@ -6,10 +6,9 @@
 //  Copyright © 2016 GoKarumi. All rights reserved.
 //
 
-import Foundation
-import BothamUI
+import UIKit
 
-class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
+class SuperHeroesPresenter {
 
     fileprivate weak var ui: SuperHeroesUI?
     fileprivate let getSuperHeroes: GetSuperHeroes
@@ -37,8 +36,9 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
     }
 }
 
-protocol SuperHeroesUI: BothamLoadingUI {
-
+protocol SuperHeroesUI: class {
+    func showLoader()
+    func hideLoader()
     func showEmptyCase()
     func show(items: [SuperHero])
     func openSuperHeroDetailScreen(_ superHeroDetailViewController: UIViewController)
