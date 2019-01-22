@@ -32,7 +32,7 @@ class SuperHeroDetailPresenter: BothamPresenter {
 
 }
 
-protocol SuperHeroDetailUI: BothamUI, BothamLoadingUI {
+protocol SuperHeroDetailUI: BothamLoadingUI {
 
     var title: String? {get set}
     func show(superHero: SuperHero?)

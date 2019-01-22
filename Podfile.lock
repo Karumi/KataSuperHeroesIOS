@@ -15,7 +15,7 @@ DEPENDENCIES:
   - SDWebImage
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - BothamUI
     - KIF
     - SDWebImage
@@ -38,4 +38,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: ea3f1a3ee9e459b69e0037bfcda52fa8e464b7d8
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

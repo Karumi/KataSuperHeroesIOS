@@ -37,7 +37,7 @@ class SuperHeroesPresenter: BothamPresenter, BothamNavigationPresenter {
     }
 }
 
-protocol SuperHeroesUI: BothamUI, BothamLoadingUI {
+protocol SuperHeroesUI: BothamLoadingUI {
 
     func showEmptyCase()
     func show(items: [SuperHero])

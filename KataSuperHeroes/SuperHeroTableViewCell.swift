@@ -19,7 +19,7 @@ class SuperHeroTableViewCell: UITableViewCell, BothamViewCell {
 
     func configure(forItem item: SuperHero) {
         nameLabel.text = item.name
-        photoImageView.sd_setImage(with: item.photo as URL!)
+        photoImageView.sd_setImage(with: item.photo)
         avengersBadgeImageView.isHidden = !item.isAvenger
         avengersBadgeImageView.accessibilityLabel = "\(item.name) - Avengers Badge"
         accessibilityLabel = item.name
