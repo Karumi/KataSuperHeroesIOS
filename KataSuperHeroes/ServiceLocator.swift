@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import BothamUI
 
 class ServiceLocator {
 
@@ -26,7 +25,7 @@ class ServiceLocator {
         superHeroesViewController.presenter = presenter
         superHeroesViewController.dataSource = dataSource
         superHeroesViewController.delegate =
-            BothamTableViewNavigationDelegate(dataSource: dataSource, presenter: presenter)
+            SuperHeroesTableViewDelegate(dataSource: dataSource, presenter: presenter)
         return superHeroesViewController
     }
 
@@ -43,8 +42,8 @@ class ServiceLocator {
         return SuperHeroDetailPresenter(ui: ui, superHeroName: superHeroName, getSuperHeroByName: getSuperHeroByName)
     }
 
-    fileprivate func provideSuperHeroesDataSource() -> BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell> {
-        return BothamTableViewDataSource<SuperHero, SuperHeroTableViewCell>()
+    fileprivate func provideSuperHeroesDataSource() -> SuperHeroesTableDataSource {
+        return SuperHeroesTableDataSource()
     }
 
     fileprivate func provideSuperHeroesPresenter(_ ui: SuperHeroesUI) -> SuperHeroesPresenter {
@@ -56,8 +55,8 @@ class ServiceLocator {
         return GetSuperHeroes(repository: SuperHeroesRepository())
     }
 
-    fileprivate lazy var storyBoard: BothamStoryboard = {
-        return BothamStoryboard(name: "SuperHeroes")
+    fileprivate lazy var storyBoard: KataSuperHeroesStoryboard = {
+        return KataSuperHeroesStoryboard(name: "SuperHeroes")
     }()
 
 }

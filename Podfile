@@ -1,13 +1,12 @@
-platform :ios, '8.0'
+platform :ios, '12.0'
 use_frameworks!
 
 target 'KataSuperHeroes' do
-    pod 'BothamUI', '~> 2.0'
     pod 'SDWebImage'
 end
 
 target 'KataSuperHeroesTests' do
-    pod "Nimble", :git => "https://github.com/Quick/Nimble.git", :branch => "master"
+    pod "Nimble", '~> 7.3.2'
     pod 'KIF', '~> 3.7.4', :configurations => ['Debug']
 end
 

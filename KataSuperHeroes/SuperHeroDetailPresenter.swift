@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import BothamUI
 
-class SuperHeroDetailPresenter: BothamPresenter {
+class SuperHeroDetailPresenter {
 
     fileprivate weak var ui: SuperHeroDetailUI?
     fileprivate let superHeroName: String
@@ -32,8 +31,9 @@ class SuperHeroDetailPresenter: BothamPresenter {
 
 }
 
-protocol SuperHeroDetailUI: BothamUI, BothamLoadingUI {
-
+protocol SuperHeroDetailUI: class {
+    func showLoader()
+    func hideLoader()
     var title: String? {get set}
     func show(superHero: SuperHero?)
 
