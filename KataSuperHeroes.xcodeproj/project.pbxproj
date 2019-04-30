@@ -399,7 +399,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KataSuperHeroes/Pods-KataSuperHeroes-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-KataSuperHeroes/Pods-KataSuperHeroes-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -408,7 +408,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KataSuperHeroes/Pods-KataSuperHeroes-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KataSuperHeroes/Pods-KataSuperHeroes-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		288DFF5EAC8985EC42E180A7 /* [CP] Check Pods Manifest.lock */ = {
@@ -453,7 +453,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KIF/KIF.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
@@ -464,7 +464,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
