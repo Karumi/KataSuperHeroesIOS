@@ -8,4 +8,4 @@ before_install:
 
 script:
   - swiftlint
-  - set -o pipefail && xcodebuild -workspace KataSuperHeroes.xcworkspace -scheme 'KataSuperHeroes' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=- | xcpretty -c
+  - set -o pipefail && xcodebuild -workspace KataSuperHeroes.xcworkspace -scheme 'KataSuperHeroes' -destination 'platform=iOS Simulator,name=iPhone 8' build test CODE_SIGN_IDENTITY=- | xcpretty -c
