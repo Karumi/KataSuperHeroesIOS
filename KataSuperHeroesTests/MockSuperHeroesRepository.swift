@@ -17,8 +17,8 @@ class MockSuperHeroesRepository: SuperHeroesRepository {
         completion(superHeroes)
     }
 
-    override func getSuperHero(withName name: String, completion: @escaping (SuperHero?) -> ()) {
-        let superHeroByName = superHeroes.filter { $0.name == name }.first
+    override func getSuperHero(withName name: String, completion: @escaping (SuperHero) -> ()) {
+        let superHeroByName = superHeroes.filter { $0.name == name }.first!
         completion(superHeroByName)
     }
 
