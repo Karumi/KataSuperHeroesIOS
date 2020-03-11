@@ -57,6 +57,7 @@
 		49538C3D21F73A2C0018AAC9 /* KataSuperHeroesStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KataSuperHeroesStoryboard.swift; sourceTree = "<group>"; };
 		4EA13799764338513A6EC853 /* Pods-KataSuperHeroes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataSuperHeroes.release.xcconfig"; path = "Pods/Target Support Files/Pods-KataSuperHeroes/Pods-KataSuperHeroes.release.xcconfig"; sourceTree = "<group>"; };
 		52BB6D7EC1A35D967ACA058D /* Pods_KataSuperHeroesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KataSuperHeroesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BFC29E823FC4EA500536532 /* KataSuperHeroes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KataSuperHeroes.entitlements; sourceTree = "<group>"; };
 		7FC32F3D31A7392656DF9EC8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91340F19D0D930E9F02F1DEA /* Pods-KataSuperHeroesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataSuperHeroesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		981F37EA85F06E461D7BE716 /* Pods-KataSuperHeroesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataSuperHeroesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KataSuperHeroesTests/Pods-KataSuperHeroesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +176,7 @@
 		EBC230731C45016A007D5068 /* KataSuperHeroes */ = {
 			isa = PBXGroup;
 			children = (
+				6BFC29E823FC4EA500536532 /* KataSuperHeroes.entitlements */,
 				EBDE9B7A1C45199100E4B4C2 /* Extensions */,
 				EBDE9B761C4518A600E4B4C2 /* Super Heroes */,
 				EBDE9B851C4539A100E4B4C2 /* View */,
@@ -340,6 +342,7 @@
 				TargetAttributes = {
 					EBC230701C45016A007D5068 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = BD48FG9BMV;
 						LastSwiftMigration = 1020;
 					};
 					EBC230841C45016A007D5068 = {
@@ -645,11 +648,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KataSuperHeroes/KataSuperHeroes.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = BD48FG9BMV;
 				INFOPLIST_FILE = KataSuperHeroes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.katasuperheroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -659,11 +668,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = KataSuperHeroes/KataSuperHeroes.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = TJGBLL3KM8;
 				INFOPLIST_FILE = KataSuperHeroes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.katasuperheroes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
