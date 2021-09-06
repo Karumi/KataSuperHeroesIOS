@@ -1,18 +1,11 @@
-//
-//  SuperHeroDetailPresenter.swift
-//  KataSuperHeroes
-//
-//  Created by Pedro Vicente Gomez on 12/01/16.
-//  Copyright © 2016 GoKarumi. All rights reserved.
-//
-
+import Combine
 import Foundation
 
 class SuperHeroDetailPresenter {
-
-    fileprivate weak var ui: SuperHeroDetailUI?
-    fileprivate let superHeroName: String
-    fileprivate let getSuperHeroByName: GetSuperHeroByName
+    private weak var ui: SuperHeroDetailUI?
+    private let superHeroName: String
+    private let getSuperHeroByName: GetSuperHeroByName
+    private var subscriptions = Set<AnyCancellable>()
 
     init(ui: SuperHeroDetailUI, superHeroName: String, getSuperHeroByName: GetSuperHeroByName) {
         self.ui = ui
@@ -23,18 +16,19 @@ class SuperHeroDetailPresenter {
     func viewDidLoad() {
         ui?.title = superHeroName
         ui?.showLoader()
-        getSuperHeroByName.execute(superHeroName) { superHero in
-            self.ui?.hideLoader()
-            self.ui?.show(superHero: superHero)
-        }
+        getSuperHeroByName
+            .execute(superHeroName)
+            .sink { superHero in
+                self.ui?.hideLoader()
+                self.ui?.show(superHero: superHero)
+            }
+            .store(in: &subscriptions)
     }
-
 }
 
-protocol SuperHeroDetailUI: class {
+protocol SuperHeroDetailUI: AnyObject {
     func showLoader()
     func hideLoader()
-    var title: String? {get set}
+    var title: String? { get set }
     func show(superHero: SuperHero?)
-
 }
