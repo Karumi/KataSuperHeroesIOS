@@ -1,11 +1,3 @@
-//
-//  SuperHeroesViewController.swift
-//  KataSuperHeroes
-//
-//  Created by Pedro Vicente Gomez on 12/01/16.
-//  Copyright © 2016 GoKarumi. All rights reserved.
-//
-
 import UIKit
 
 class SuperHeroesViewController: KataSuperHeroesViewController, SuperHeroesUI {
@@ -41,7 +33,7 @@ class SuperHeroesViewController: KataSuperHeroesViewController, SuperHeroesUI {
         tableView.reloadData()
     }
 
-    fileprivate func configureNavigationBarBackButton() {
+    private func configureNavigationBarBackButton() {
         navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
     }
 }
