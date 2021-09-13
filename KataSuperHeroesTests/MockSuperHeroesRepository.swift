@@ -1,25 +1,20 @@
-//
-//  MockSuperHeroesRepository.swift
-//  KataSuperHeroes
-//
-//  Created by Pedro Vicente Gomez on 13/01/16.
-//  Copyright © 2016 GoKarumi. All rights reserved.
-//
-
 import Foundation
+import Combine
+
 @testable import KataSuperHeroes
 
 class MockSuperHeroesRepository: SuperHeroesRepository {
-
     var superHeroes = [SuperHero]()
 
-    override func getAll(_ completion: @escaping ([SuperHero]) -> ()) {
-        completion(superHeroes)
+    override func getAll() -> AnyPublisher<[SuperHero], Never> {
+        Just(superHeroes).eraseToAnyPublisher()
     }
 
-    override func getSuperHero(withName name: String, completion: @escaping (SuperHero) -> ()) {
+    override func getSuperHero(
+        withName name: String
+    ) -> AnyPublisher<SuperHero?, Never> {
         let superHeroByName = superHeroes.filter { $0.name == name }.first!
-        completion(superHeroByName)
+        return Just(superHeroByName).eraseToAnyPublisher()
     }
 
 }

@@ -1,20 +1,13 @@
-//
-//  SuperHeroDetailViewControllerTests.swift
-//  KataSuperHeroes
-//
-//  Created by Pedro Vicente Gomez on 13/01/16.
-//  Copyright © 2016 GoKarumi. All rights reserved.
-//
-
 import Foundation
 import KIF
 import Nimble
 import UIKit
+
 @testable import KataSuperHeroes
 
 class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
 
-    fileprivate let repository = MockSuperHeroesRepository()
+    private let repository = MockSuperHeroesRepository()
 
     func testShowsSuperHeroNameAsTitle() {
         let superHero = givenASuperHeroWithName()
@@ -64,7 +57,10 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
         tester().waitForAbsenceOfView(withAccessibilityLabel: "LoadingView")
     }
 
-    fileprivate func givenASuperHeroWithName(_ isAvenger: Bool = false) -> SuperHero {
+}
+
+private extension SuperHeroDetailViewControllerTests {
+    private func givenASuperHeroWithName(_ isAvenger: Bool = false) -> SuperHero {
         let superHero = SuperHero(name: "Mr. Clean",
             photo: URL(string: "https://i.annihil.us/u/prod/marvel/i/mg/c/60/55b6a28ef24fa.jpg"),
             isAvenger: isAvenger, description: "Description")
@@ -72,7 +68,7 @@ class SuperHeroDetailViewControllerTests: AcceptanceTestCase {
         return superHero
     }
 
-    fileprivate func openSuperHeroDetailViewController(_ superHeroName: String) {
+    private func openSuperHeroDetailViewController(_ superHeroName: String) {
         let superHeroDetailViewController = ServiceLocator()
             .provideSuperHeroDetailViewController(superHeroName) as! SuperHeroDetailViewController
         superHeroDetailViewController.presenter = SuperHeroDetailPresenter(ui: superHeroDetailViewController,

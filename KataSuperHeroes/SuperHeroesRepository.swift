@@ -1,16 +1,9 @@
-//
-//  SuperHeroesRepository.swift
-//  KataSuperHeroes
-//
-//  Created by Pedro Vicente Gomez on 12/01/16.
-//  Copyright © 2016 GoKarumi. All rights reserved.
-//
-
 import Foundation
+import Combine
 
 class SuperHeroesRepository {
 
-    fileprivate let superHeroes: [SuperHero]
+    private let superHeroes: [SuperHero]
 
     init() {
         self.superHeroes = [
@@ -103,26 +96,16 @@ class SuperHeroesRepository {
             ]
     }
 
-    func getAll(_ completion: @escaping ([SuperHero]) -> ()) {
-        delay(1.5) {
-            completion(self.superHeroes)
-        }
+    func getAll() -> AnyPublisher<[SuperHero], Never> {
+        Just(self.superHeroes)
+            .delay(for: 1.5, scheduler: RunLoop.main)
+            .eraseToAnyPublisher()
     }
 
-    func getSuperHero(withName name: String, completion: @escaping (SuperHero) -> ()) {
-        delay(1.5) {
-            if let superHeroByName = self.superHeroes.filter({ (superHero) -> Bool in
-                superHero.name == name
-                }).first {
-                completion(superHeroByName)
-            }
-        }
+    func getSuperHero(withName name: String) -> AnyPublisher<SuperHero?, Never> {
+        let superHero = superHeroes.first { $0.name == name }
+        return Just(superHero)
+            .delay(for: 1.5, scheduler: RunLoop.main)
+            .eraseToAnyPublisher()
     }
-
-    fileprivate func delay(_ delay: Double, closure: @escaping ()->()) {
-        DispatchQueue.main.asyncAfter(
-            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure
-        )
-    }
-
 }

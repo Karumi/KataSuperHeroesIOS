@@ -1,20 +1,13 @@
-//
-//  SuperHeroesViewControllerTests.swift
-//  KataSuperHeroes
-//
-//  Created by Pedro Vicente Gomez on 13/01/16.
-//  Copyright © 2016 GoKarumi. All rights reserved.
-//
-
 import Foundation
 import KIF
 import Nimble
 import UIKit
+
 @testable import KataSuperHeroes
 
 class SuperHeroesViewControllerTests: AcceptanceTestCase {
 
-    fileprivate let repository = MockSuperHeroesRepository()
+    private let repository = MockSuperHeroesRepository()
 
     func testShowsEmptyCaseIfThereAreNoSuperHeroes() {
         givenThereAreNoSuperHeroes()
@@ -27,40 +20,26 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
     func testShowsSuperHeroNamesIfThereAreSuperHeroes() {
         let superHeroes = givenThereAreSomeSuperHeroes()
 
-        let viewController = openSuperHeroesViewController()
+        openSuperHeroesViewController()
 
-        for i in 0..<superHeroes.count {
-            let superHeroCell = tester().waitForCell(at: IndexPath(row: i, section: 0),
-                                                     in: viewController.tableView) as! SuperHeroTableViewCell
-
-            expect(superHeroCell.nameLabel.text).to(equal(superHeroes[i].name))
-        }
+        assertSuperHerosDisplayed(superHeroes)
     }
+    
 
     func testShowsAvengersBadgeIfASuperHeroIsPartOfTheAvengersTeam() {
         let superHeroes = givenThereAreSomeAvengers()
 
-        let viewController = openSuperHeroesViewController()
+        openSuperHeroesViewController()
 
-        for i in 0..<superHeroes.count {
-            let superHeroCell = tester().waitForCell(at: IndexPath(row: i, section: 0),
-                                                     in: viewController.tableView) as! SuperHeroTableViewCell
-
-            expect(superHeroCell.avengersBadgeImageView.isHidden).to(beFalse())
-        }
+        assertAvengersDisplayed(superHeroes)
     }
 
     func testDoNotShowAvengersBadgeIfSuperHeroesAreNotPartOfTheAvengersTeam() {
         let superHeroes = givenThereAreSomeSuperHeroes()
 
-        let viewController = openSuperHeroesViewController()
+        openSuperHeroesViewController()
 
-        for i in 0..<superHeroes.count {
-            let superHeroCell = tester().waitForCell(at: IndexPath(row: i, section: 0),
-                                                     in: viewController.tableView) as! SuperHeroTableViewCell
-
-            expect(superHeroCell.avengersBadgeImageView.isHidden).to(beTrue())
-        }
+        assertNonAvengersDisplayed(superHeroes)
     }
 
     func testDoNotShowEmptyCaseIfThereAreSuperHeroes() {
@@ -100,16 +79,18 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
 
         tester().waitForView(withAccessibilityLabel: superHero.name)
     }
+}
 
-    fileprivate func givenThereAreSomeAvengers() -> [SuperHero] {
+private extension SuperHeroesViewControllerTests {
+    func givenThereAreSomeAvengers() -> [SuperHero] {
         return givenThereAreSomeSuperHeroes(avengers: true)
     }
 
-    fileprivate func givenThereAreNoSuperHeroes() {
+    func givenThereAreNoSuperHeroes() {
         _ = givenThereAreSomeSuperHeroes(0)
     }
 
-    fileprivate func givenThereAreSomeSuperHeroes(_ numberOfSuperHeroes: Int = 10,
+    func givenThereAreSomeSuperHeroes(_ numberOfSuperHeroes: Int = 10,
         avengers: Bool = false) -> [SuperHero] {
         var superHeroes = [SuperHero]()
         for i in 0..<numberOfSuperHeroes {
@@ -123,7 +104,7 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
     }
 
     @discardableResult
-    fileprivate func openSuperHeroesViewController() -> SuperHeroesViewController {
+    func openSuperHeroesViewController() -> SuperHeroesViewController {
         let superHeroesViewController = ServiceLocator()
             .provideSuperHeroesViewController() as! SuperHeroesViewController
         superHeroesViewController.presenter = SuperHeroesPresenter(ui: superHeroesViewController,
@@ -133,5 +114,43 @@ class SuperHeroesViewControllerTests: AcceptanceTestCase {
         present(viewController: rootViewController)
         tester().waitForAnimationsToFinish()
         return superHeroesViewController
+    }
+    
+
+    
+    func assertSuperHerosDisplayed(_ superHeroes: [SuperHero]) {
+        assertSuperHerosDisplayed(superHeroes) { cell, hero in
+            expect(cell.nameLabel.text).to(equal(hero.name))
+        }
+    }
+    
+    func assertAvengersDisplayed(_ superHeroes: [SuperHero]) {
+        assertSuperHerosDisplayed(superHeroes) { cell, _ in
+            expect(cell.avengersBadgeImageView.isHidden).to(beFalse())
+        }
+    }
+    
+    func assertNonAvengersDisplayed(_ superHeroes: [SuperHero]) {
+        assertSuperHerosDisplayed(superHeroes) { cell, _ in
+            expect(cell.avengersBadgeImageView.isHidden).to(beTrue())
+        }
+    }
+    
+    private func assertSuperHerosDisplayed(
+        _ superHeroes: [SuperHero],
+        assert: ((SuperHeroTableViewCell, SuperHero) -> Void)
+    ) {
+        for i in 0..<superHeroes.count {
+            let superHeroCell = getSuperHeroTableViewCell(atIndex: i)
+            assert(superHeroCell, superHeroes[i])
+        }
+    }
+    
+    private func getSuperHeroTableViewCell(atIndex row: Int) -> SuperHeroTableViewCell {
+        let indexPath = IndexPath(row: row, section: 0)
+        let cell = tester().waitForCell(
+            at: indexPath,
+            inTableViewWithAccessibilityIdentifier: "SuperHeroesTableView")
+        return cell as! SuperHeroTableViewCell
     }
 }

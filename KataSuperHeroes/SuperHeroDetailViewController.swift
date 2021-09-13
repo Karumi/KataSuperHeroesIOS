@@ -1,11 +1,3 @@
-//
-//  SuperHeroDetailViewController.swift
-//  KataSuperHeroes
-//
-//  Created by Pedro Vicente Gomez on 12/01/16.
-//  Copyright © 2016 GoKarumi. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import SDWebImage
@@ -22,13 +14,13 @@ class SuperHeroDetailViewController: KataSuperHeroesViewController, SuperHeroDet
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         presenter.viewDidLoad()
     }
 
     func show(superHero: SuperHero?) {
-        guard let superHero = superHero else {
-            return
-        }
+        guard let superHero = superHero else { return }
+        
         userLabel.text = superHero.name
         userLabel.accessibilityLabel = "Name: \(superHero.name)"
         userLabel.isHidden = false
