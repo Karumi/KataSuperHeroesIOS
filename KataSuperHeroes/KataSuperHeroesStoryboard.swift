@@ -14,7 +14,9 @@ class KataSuperHeroesStoryboard {
         return uiStoryboard.instantiateInitialViewController() as! T
     }
 
-    public func instantiateViewController<T>(_ viewControllerIdentifier: String = String(describing: T.self)) -> T {
+    public func instantiateViewController<T>(
+        _ viewControllerIdentifier: String = String(describing: T.self)
+    ) -> T {
         let uiStoryboard = UIStoryboard(name: name, bundle: bundle)
         return uiStoryboard.instantiateViewController(withIdentifier: viewControllerIdentifier) as! T
     }

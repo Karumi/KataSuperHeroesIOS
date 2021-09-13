@@ -1,11 +1,3 @@
-//
-//  SuperHeroTableViewCell.swift
-//  KataSuperHeroes
-//
-//  Created by Pedro Vicente Gomez on 12/01/16.
-//  Copyright © 2016 GoKarumi. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import SDWebImage
@@ -28,7 +20,7 @@ class SuperHeroTableViewCell: UITableViewCell {
         applyImageGradient(photoImageView)
     }
 
-    fileprivate func applyImageGradient(_ thumbnailImage: UIImageView) {
+    private func applyImageGradient(_ thumbnailImage: UIImageView) {
         guard thumbnailImage.layer.sublayers == nil else {
             return
         }

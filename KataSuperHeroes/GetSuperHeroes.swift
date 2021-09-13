@@ -1,24 +1,14 @@
-//
-//  GetSuperHeroes.swift
-//  KataSuperHeroes
-//
-//  Created by Pedro Vicente Gomez on 12/01/16.
-//  Copyright © 2016 GoKarumi. All rights reserved.
-//
-
 import Foundation
+import Combine
 
 class GetSuperHeroes {
-
-    fileprivate let repository: SuperHeroesRepository
+    private let repository: SuperHeroesRepository
 
     init(repository: SuperHeroesRepository) {
         self.repository = repository
     }
 
-    func execute(_ completion: @escaping ([SuperHero]) -> ()) {
-        repository.getAll() { superHeroes in
-            completion(superHeroes)
-        }
+    func execute() -> AnyPublisher<[SuperHero], Never> {
+        repository.getAll()
     }
 }
